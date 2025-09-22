@@ -13,21 +13,12 @@
       text-align: center;
     }
 
-    /* Topbar prova social */
-    .topbar {
-      background: #ff0080;
-      color: #fff;
-      padding: 8px;
-      font-size: 14px;
-      font-weight: bold;
-      text-align: center;
-    }
-
     header {
-      background: url("img/fundo.jpg") no-repeat center/cover;
+      background: url("fundo.jpg") no-repeat center/cover; /* capa */
       padding: 50px 20px 100px;
       position: relative;
     }
+
     .profile-pic {
       width: 150px;
       height: 150px;
@@ -41,14 +32,17 @@
       right: 0;
       box-shadow: 0 0 25px #ff0080;
     }
+
     main {
       margin-top: 100px;
       padding: 20px;
     }
+
     h1 {
       color: #ff4da6;
       margin: 15px 0 5px;
     }
+
     .highlight {
       font-size: 16px;
       color: #ddd;
@@ -56,22 +50,18 @@
       font-style: italic;
     }
 
-    /* Estatísticas */
     .stats {
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 15px;
+      gap: 25px;
       margin: 15px 0;
-      flex-wrap: nowrap; /* mantém lado a lado */
-      overflow-x: auto; /* scroll horizontal em telas estreitas */
+      flex-wrap: wrap; /* garante que em telas pequenas ainda fica bonito */
     }
+
     .stats div {
-      font-size: 14px;
-      flex: 1;
-      min-width: 80px;
-      text-align: center;
+      font-size: 16px;
     }
+
     .stats span {
       display: block;
       font-weight: bold;
@@ -85,6 +75,7 @@
       gap: 15px;
       margin: 20px 0;
     }
+
     .btn {
       padding: 12px 18px;
       border-radius: 8px;
@@ -93,7 +84,11 @@
       display: inline-block;
       transition: 0.3s;
     }
-    .btn:hover { opacity: 0.85; }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+
     .btn-pink { background: #ff0080; color: white; }
     .btn-gray { background: #333; color: white; }
 
@@ -108,16 +103,19 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.5);
       animation: fadeIn 1.5s ease;
     }
+
     .offer-box h2 {
       color: #ff4da6;
       margin-bottom: 15px;
     }
+
     .offer-desc {
       font-size: 15px;
       color: #333;
       line-height: 1.5;
       margin: 10px 0 20px;
     }
+
     .price {
       margin: 15px 0 10px;
       font-weight: bold;
@@ -137,17 +135,11 @@
       font-size: 20px;
       box-shadow: 0 0 20px #ff0080;
       transition: 0.3s;
-      animation: pulse 1.5s infinite;
     }
+
     .btn-blue:hover {
       transform: scale(1.05);
       box-shadow: 0 0 30px #ff4da6;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
     }
 
     .features {
@@ -158,6 +150,7 @@
       max-width: 800px;
       flex-wrap: wrap;
     }
+
     .feature-box {
       flex: 1;
       background: #1f1f1f;
@@ -168,10 +161,12 @@
       transition: 0.3s;
       min-width: 200px;
     }
+
     .feature-box:hover {
       transform: scale(1.05);
       box-shadow: 0 0 20px #ff0080;
     }
+
     .feature-box i {
       font-size: 30px;
       color: #ff0080;
@@ -182,10 +177,12 @@
       margin: 40px auto;
       max-width: 700px;
     }
+
     .feedback h3 {
       margin-bottom: 15px;
       color: #ff4da6;
     }
+
     .whatsapp-msg {
       background:#1f1f1f;
       padding:15px;
@@ -194,43 +191,16 @@
       max-width:350px;
       margin:10px auto;
     }
-    .whatsapp-msg p { margin:0; font-size:14px; }
-    .user { color:#0f0; font-size:13px; margin-bottom:5px; }
 
-    /* Área de comentários */
-    .comments-box {
-      background: #1f1f1f;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 600px;
-      margin: 30px auto;
-      text-align: left;
+    .whatsapp-msg p {
+      margin:0;
+      font-size:14px;
     }
-    .comments-box h3 { color: #ff4da6; margin-bottom: 10px; }
-    .comments-box textarea {
-      width: 100%;
-      height: 80px;
-      border-radius: 8px;
-      border: none;
-      padding: 10px;
-      resize: none;
-    }
-    .comments-box button {
-      margin-top: 10px;
-      padding: 10px 18px;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .comments-box button.save { background:#ff0080; color:#fff; }
-    .comments-box button.clear { background:#444; color:#fff; margin-left:8px; }
-    .comment-item {
-      background: #2a2a2a;
-      padding: 8px 12px;
-      border-radius: 6px;
-      margin-top: 8px;
-      font-size: 14px;
+
+    .user {
+      color:#0f0;
+      font-size:13px;
+      margin-bottom:5px;
     }
 
     footer {
@@ -255,6 +225,7 @@
       justify-content:center;
       align-items:center;
     }
+
     #exitPopup .popup-box {
       background:#fff;
       color:#111;
@@ -265,7 +236,11 @@
       box-shadow:0 0 20px #ff0080;
       animation:fadeIn 0.5s ease;
     }
-    #exitPopup h2 { color:#ff0080; }
+
+    #exitPopup h2 {
+      color:#ff0080;
+    }
+
     #exitPopup button {
       margin-top:15px;
       padding:12px 20px;
@@ -276,15 +251,17 @@
       cursor:pointer;
       font-weight:bold;
     }
-    #exitPopup button:hover { opacity:0.8; }
+
+    #exitPopup button:hover {
+      opacity:0.8;
+    }
   </style>
 </head>
 <body>
 
-  <div class="topbar">🔥 5 pessoas compraram nas últimas horas!</div>
-
   <header>
-    <img src="img/perfil.jpg" alt="Foto de perfil" class="profile-pic">
+    <!-- foto de perfil -->
+    <img src="perfil.jpg" alt="Foto de perfil" class="profile-pic">
   </header>
 
   <main>
@@ -294,8 +271,8 @@
     <div class="stats">
       <div><span id="fotos">137</span> Fotos</div>
       <div><span id="videos">89</span> Vídeos</div>
-      <div><span id="seguidores">1524</span> Seguidores</div>
-      <div><span id="curtidas">863</span> Curtidas</div>
+      <div><span id="seguidores">5</span> Seguidores</div>
+      <div><span id="curtidas">3</span> Curtidas</div>
     </div>
 
     <div class="buttons">
@@ -305,8 +282,8 @@
 
     <div class="offer-box">
       <h2>💖 SEJA MEU VIP AGORA 💖</h2>
-      <p class="offer-desc">Quer sentir uma conexão única comigo?<br>
-      No meu VIP você entra no meu mundo particular,<br>
+      <p class="offer-desc">Quer sentir uma conexão única comigo?  
+      No meu VIP você entra no meu mundo particular,  
       com conteúdos que você nunca vai encontrar em outro lugar 🔥</p>
 
       <p class="price">Tudo isso por apenas <b>R$24,90/mês 💎</b></p>
@@ -320,13 +297,16 @@
 
     <div class="features">
       <div class="feature-box">
-        <i>📸</i><br>Fotos exclusivas e inéditas
+        <i>📸</i><br>
+        Fotos exclusivas e inéditas
       </div>
       <div class="feature-box">
-        <i>🎥</i><br>Vídeos privados e sensuais
+        <i>🎥</i><br>
+        Vídeos privados e sensuais
       </div>
       <div class="feature-box">
-        <i>💌</i><br>Contato direto comigo
+        <i>💌</i><br>
+        Contato direto comigo
       </div>
     </div>
 
@@ -345,26 +325,17 @@
         <p>"Muito melhor que qualquer site, tô viciado 💖"</p>
       </div>
     </div>
-
-    <div class="comments-box">
-      <h3>✍️ Deixe seu comentário (visível só pra você)</h3>
-      <textarea id="commentInput" placeholder="Escreva algo..."></textarea><br>
-      <button class="save" onclick="saveComment()">💾 Salvar</button>
-      <button class="clear" onclick="clearComments()">🗑 Limpar</button>
-      <div id="commentList"></div>
-    </div>
   </main>
 
   <footer>
     ©️ 2025 Bruna VIP - Todos os direitos reservados
     <div style="margin-top:20px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
-      <img src="img/seguro.png" alt="Compra Segura" style="height:30px;">
-      <img src="img/pix.png" alt="Pagamento PIX" style="height:30px;">
-      <img src="img/verificado.png" alt="Site Verificado" style="height:30px;">
+      <img src="seguro.png" alt="Compra Segura" style="height:30px;">
+      <img src="pix.png" alt="Pagamento PIX" style="height:30px;">
+      <img src="verificado.png" alt="Site Verificado" style="height:30px;">
     </div>
   </footer>
 
-  <!-- Exit Popup -->
   <div id="exitPopup">
     <div class="popup-box">
       <h2>⚠️ ESPERA AÍ!</h2>
@@ -376,28 +347,42 @@
 
   <script>
     // Seguir/Parar de seguir
-    const seguirBtn = document.getElementById("seguirBtn");
+    let seguidores = localStorage.getItem("seguidores") || 5;
     let seguindo = localStorage.getItem("seguindo") === "true";
 
-    function updateSeguirBtn() {
+    const seguidorSpan = document.getElementById("seguidores");
+    const seguirBtn = document.getElementById("seguirBtn");
+
+    function atualizarBotao() {
       if (seguindo) {
-        seguirBtn.innerText = "✔ Seguindo";
-        seguirBtn.style.opacity = "0.6";
+        seguirBtn.innerText = "✔ Seguindo (Parar)";
+        seguirBtn.style.opacity = "1";
+        seguirBtn.style.pointerEvents = "auto";
       } else {
         seguirBtn.innerText = "➕ Seguir";
         seguirBtn.style.opacity = "1";
+        seguirBtn.style.pointerEvents = "auto";
       }
+      seguidorSpan.innerText = seguidores;
     }
-    updateSeguirBtn();
+
+    atualizarBotao();
 
     seguirBtn.addEventListener("click", function(e){
       e.preventDefault();
-      seguindo = !seguindo;
+      if (seguindo) {
+        seguidores--;
+        seguindo = false;
+      } else {
+        seguidores++;
+        seguindo = true;
+      }
+      localStorage.setItem("seguidores", seguidores);
       localStorage.setItem("seguindo", seguindo);
-      updateSeguirBtn();
+      atualizarBotao();
     });
 
-    // Timer regressivo
+    // Timer
     let endTime = localStorage.getItem("endTime");
     if (!endTime) {
       let now = new Date();
@@ -424,6 +409,7 @@
 
       document.getElementById("timer").innerText = hours + "h " + minutes + "m " + seconds + "s";
     }
+
     updateTimer();
     setInterval(updateTimer, 1000);
 
@@ -435,36 +421,7 @@
         popupShown = true;
       }
     });
-
-    // Comentários
-    function saveComment() {
-      const input = document.getElementById("commentInput");
-      const comment = input.value.trim();
-      if (comment !== "") {
-        const comments = JSON.parse(localStorage.getItem("comments") || "[]");
-        const timestamp = new Date().toLocaleString();
-        comments.push({ text: comment, time: timestamp });
-        localStorage.setItem("comments", JSON.stringify(comments));
-        input.value = "";
-        renderComments();
-      }
-    }
-    function clearComments() {
-      localStorage.removeItem("comments");
-      renderComments();
-    }
-    function renderComments() {
-      const comments = JSON.parse(localStorage.getItem("comments") || "[]");
-      const list = document.getElementById("commentList");
-      list.innerHTML = "";
-      comments.forEach(c => {
-        const div = document.createElement("div");
-        div.className = "comment-item";
-        div.innerText = `[${c.time}] ${c.text}`;
-        list.appendChild(div);
-      });
-    }
-    renderComments();
   </script>
+
 </body>
 </html>
