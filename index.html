@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bruna VIP 💖</title>
+  <title>Maria Eduarda VIP 💖</title>
+
+  <!-- Fonte bonita -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --black: #000000;
-      --card: #060606;            /* quadrados mais pretos */
-      --pink1: #ff0080;          /* neon rosa */
+      --card: #060606;
+      --pink1: #ff0080;
       --pink2: #ff5aa6;
-      --blue1: #0077ff;          /* botão de pagar azul */
+      --blue1: #0077ff;
       --blue2: #33a1ff;
       --muted: #bdbfc3;
       --white: #ffffff;
@@ -18,7 +22,7 @@
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:Inter,Arial,Helvetica,sans-serif;
+      font-family:'Poppins',Arial,Helvetica,sans-serif;
       background: var(--black);
       color:var(--white);
       text-align:center;
@@ -27,10 +31,17 @@
       padding-bottom:48px;
     }
     a{color:inherit;text-decoration:none}
+
+    /* barra no topo */
     .topbar{
       background: linear-gradient(90deg,var(--pink1),var(--pink2));
       color:#111;padding:8px 12px;font-weight:700;font-size:14px;
-      box-shadow:0 8px 30px rgba(255,0,128,0.06);
+      box-shadow:0 8px 30px rgba(255,0,128,0.2);
+      animation: pulseBar 3s infinite;
+    }
+    @keyframes pulseBar {
+      0%,100%{opacity:1}
+      50%{opacity:0.7}
     }
 
     header{padding:36px 16px 8px;}
@@ -38,71 +49,65 @@
     .profile-pic{
       width:170px;height:170px;border-radius:50%;display:block;margin:0 auto;
       border:6px solid var(--pink1);
-      box-shadow: 0 20px 60px rgba(255,0,128,0.12);
+      box-shadow: 0 20px 60px rgba(255,0,128,0.25);
       background-size:cover;background-position:center;
       transition: transform .35s ease, box-shadow .35s ease;
+      animation: fadeIn 1.5s ease;
     }
-    .profile-pic:hover{transform:translateY(-6px);box-shadow:0 30px 90px rgba(255,0,128,0.18)}
+    .profile-pic:hover{transform:translateY(-6px) scale(1.05);box-shadow:0 30px 90px rgba(255,0,128,0.4)}
 
     main{max-width:980px;margin:18px auto;padding:0 18px}
-    h1{color:var(--white);margin:14px 0 6px;font-size:30px} /* nome em branco */
-    .subtitle{color:var(--muted);margin-bottom:14px;font-size:15px}
+    h1{color:var(--white);margin:14px 0 6px;font-size:34px;font-weight:800;height:40px} 
+    .subtitle{color:var(--muted);margin-bottom:14px;font-size:16px}
 
-    /* stats: números em azul */
+    /* stats */
     .stats{display:flex;gap:18px;justify-content:center;margin:12px 0 16px;padding:6px;flex-wrap:nowrap;overflow-x:auto}
-    .stat{min-width:100px;background:transparent;border-radius:12px;padding:10px 14px;font-size:13px;color:var(--muted);display:flex;flex-direction:column;align-items:center}
-    .stat .num{color:var(--blue1);font-weight:900;font-size:18px;margin-bottom:4px} /* azul */
+    .stat{min-width:100px;padding:10px 14px;font-size:13px;color:var(--muted);display:flex;flex-direction:column;align-items:center}
+    .stat .num{color:var(--blue1);font-weight:900;font-size:20px;margin-bottom:4px;animation: glow 2s infinite}
+    @keyframes glow {
+      0%,100%{text-shadow:0 0 10px var(--blue1)}
+      50%{text-shadow:0 0 20px var(--blue2)}
+    }
 
+    /* botões */
     .buttons{display:flex;gap:12px;justify-content:center;margin:18px 0;flex-wrap:wrap}
-    .btn{padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer;border:0;display:inline-flex;align-items:center;gap:8px}
-    /* rosa - mantém neon */
-    .btn-pink{background:linear-gradient(90deg,var(--pink1),var(--pink2));color:#111;box-shadow:0 12px 36px rgba(255,0,128,0.12)}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .btn{padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer;border:0;display:inline-flex;align-items:center;gap:8px;transition: all .3s ease}
+    .btn:hover{transform:scale(1.05)}
+    .btn-pink{background:linear-gradient(90deg,var(--pink1),var(--pink2));color:#111;box-shadow:0 12px 36px rgba(255,0,128,0.3)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.2);color:var(--muted)}
     .btn-wide{min-width:220px}
 
-    /* oferta: quadrados mais pretos e maiores */
-    .offer{background:transparent;margin:20px auto;max-width:900px;padding:0 6px}
-    .offer-box{background:var(--card);color:#fff;padding:20px;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,0.8);display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+    /* oferta */
+    .offer{margin:20px auto;max-width:900px;padding:0 6px}
+    .offer-box{background:var(--card);padding:24px;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,0.8);display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;animation:fadeInUp 1.2s ease}
     .offer-left{flex:1;min-width:320px}
     .offer-right{width:360px;min-width:260px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px}
 
-    .offer h2{color:var(--pink2);margin:0 0 10px;font-size:20px}
+    .offer h2{color:var(--pink2);margin:0 0 10px;font-size:22px}
     .offer p.lead{color:#ccc;margin:6px 0 14px;font-size:15px}
 
-    /* plan - mais preto, maior e descrição aumentada */
-    .plan{background:#020202;padding:18px;border-radius:12px;margin-bottom:12px;color:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.7)}
+    /* planos */
+    .plan{background:#020202;padding:18px;border-radius:12px;margin-bottom:14px;color:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.7);transition:.3s}
+    .plan:hover{transform:scale(1.02)}
     .plan .title{font-weight:900;color:var(--pink2);font-size:16px;margin-bottom:6px}
     .plan .price{font-weight:900;font-size:20px;color:var(--white);margin:6px 0}
     .plan .desc{color:#bdbfc3;font-size:13px;line-height:1.4;margin-bottom:12px}
-    /* botão de pagar: AZUL como pediu */
-    .pay-blue{background:linear-gradient(90deg,var(--blue1),var(--blue2));color:#fff;padding:12px 14px;border-radius:10px;font-weight:900;display:inline-block;text-align:center;min-width:200px}
+    .pay-blue{background:linear-gradient(90deg,var(--blue1),var(--blue2));color:#fff;padding:12px 14px;border-radius:10px;font-weight:900;display:inline-block;text-align:center;min-width:200px;transition:.3s}
+    .pay-blue:hover{box-shadow:0 0 20px var(--blue2);transform:scale(1.05)}
 
+    /* features */
     .features{display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap}
-    .feature{background:transparent;padding:14px;border-radius:10px;min-width:180px;flex:1;color:var(--muted)}
+    .feature{background:#0c0c0c;padding:14px;border-radius:10px;min-width:180px;flex:1;color:var(--muted);transition:.3s}
+    .feature:hover{transform:scale(1.05);box-shadow:0 0 15px rgba(255,0,128,0.3)}
 
+    /* feedback */
     .feedback{max-width:900px;margin:28px auto;text-align:left}
-    .testi{background:#0b0b0b;padding:12px;border-radius:10px;margin-bottom:12px;color:#eee}
-
-    .extra-section{max-width:900px;margin:40px auto;padding:20px;background:#070707;border-radius:12px;text-align:left;color:var(--muted)}
-    .extra-section h3{color:var(--blue2);margin-bottom:10px}
+    .testi{background:#0b0b0b;padding:14px;border-radius:10px;margin-bottom:12px;color:#eee;animation:fadeIn 1s ease}
 
     footer{margin-top:36px;color:#8f8f8f;font-size:13px}
 
-    /* modal downsell (se quiser ativar) */
-    #downsellModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;z-index:9999}
-    .modalCard{background:#0f0f0f;color:#fff;padding:18px;border-radius:12px;max-width:420px;text-align:center}
-
-    /* responsive */
-    @media(max-width:880px){
-      .offer-box{flex-direction:column}
-      .offer-right{width:100%}
-    }
-    @media(max-width:520px){
-      .profile-pic{width:130px;height:130px}
-      .stat{min-width:84px}
-      .pay-blue{width:100%}
-      .btn-wide{width:100%}
-    }
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
   </style>
 </head>
 <body>
@@ -111,16 +116,15 @@
 
   <header>
     <div class="profile-wrap">
-      <!-- coloque perfil.jpg na raiz do repo -->
-      <img src="perfil.jpg" alt="Foto de perfil" class="profile-pic" id="profilePic">
+      <img src="perfil.jpg" alt="Foto de perfil" class="profile-pic">
     </div>
   </header>
 
   <main>
-    <h1>Bruna VIP</h1> <!-- em branco -->
+    <h1 id="typed"></h1>
     <p class="subtitle">✨ Conteúdo privado, mensagens diretas e conteúdo diário — só pra assinantes ✨</p>
 
-    <div class="stats" aria-hidden="false">
+    <div class="stats">
       <div class="stat"><div class="num">107</div><div class="label">Posts</div></div>
       <div class="stat"><div class="num">128</div><div class="label">Mídia</div></div>
       <div class="stat"><div class="num">723</div><div class="label">Seguidores</div></div>
@@ -128,120 +132,74 @@
     </div>
 
     <div class="buttons">
-      <!-- Enviar mimo: abre WhatsApp sem mensagem (cliente escolhe o que mandar) -->
       <a id="mimoBtn" class="btn btn-pink btn-wide" href="https://wa.me/5511962833961" target="_blank" rel="noopener">🎁 Enviar mimo</a>
-
-      <!-- Suporte com mensagem pronta -->
-      <a id="suporteBtn" class="btn btn-ghost" href="https://wa.me/5511962833961?text=Oi%2C%20preciso%20de%20ajuda" target="_blank" rel="noopener">💬 Suporte</a>
+      <a class="btn btn-ghost" href="https://wa.me/5511962833961?text=Oi%2C%20preciso%20de%20ajuda" target="_blank" rel="noopener">💬 Suporte</a>
     </div>
 
-    <!-- Oferta: caixa maior e mais preta -->
+    <!-- Planos -->
     <div class="offer">
       <div class="offer-box">
         <div class="offer-left">
           <h2>💖 Escolha seu plano</h2>
           <p class="lead">Acesso imediato a todo o conteúdo exclusivo. Escolha o plano que combina com você — mensal ou vitalício.</p>
 
-          <!-- Plano 1 mês -->
-          <div class="plan" aria-hidden="false">
+          <div class="plan">
             <div class="title">1 mês</div>
             <div class="price">R$19,90</div>
-            <div class="desc">
-              Acesso completo por 30 dias: fotos inéditas, vídeos exclusivos, mensagens privadas e prioridade nas respostas.
-            </div>
-            <div style="text-align:left">
-              <a id="payMonth" class="pay-blue" href="pix-month.html">Pagar 1 mês — R$19,90</a>
-            </div>
+            <div class="desc">Acesso completo por 30 dias: fotos inéditas, vídeos exclusivos, mensagens privadas e prioridade nas respostas.</div>
+            <a class="pay-blue" href="pix-month.html">Pagar 1 mês — R$19,90</a>
           </div>
 
-          <!-- Plano Vitalício -->
-          <div class="plan" aria-hidden="false">
+          <div class="plan">
             <div class="title">Vitalício</div>
             <div class="price">R$59,90</div>
-            <div class="desc">
-              Acesso para sempre + prioridade VIP nas mensagens e destaque nos conteúdos — pra quem quer a parada completa.
-            </div>
-            <div style="text-align:left">
-              <a id="payLifetime" class="pay-blue" href="pix-lifetime.html">Pagar Vitalício — R$59,90</a>
-            </div>
+            <div class="desc">Acesso para sempre + prioridade VIP nas mensagens e destaque nos conteúdos — pra quem quer a parada completa.</div>
+            <a class="pay-blue" href="pix-lifetime.html">Pagar Vitalício — R$59,90</a>
           </div>
         </div>
 
-        <!-- lado direito: pequena área decorativa (removi texto de suporte) -->
-        <div class="offer-right" aria-hidden="true">
+        <div class="offer-right">
           <div style="width:120px;height:120px;border-radius:12px;background:linear-gradient(180deg,var(--pink2),#ffdcec);display:flex;align-items:center;justify-content:center;color:#111;font-weight:900">VIP</div>
           <div style="color:#444;font-size:13px;text-align:center;margin-top:6px">Selos de confiança</div>
           <div style="display:flex;gap:8px;margin-top:8px">
-            <img src="seguro.png" alt="Seguro" style="height:34px;filter:grayscale(0.2) contrast(0.9)">
-            <img src="pix.png" alt="PIX" style="height:34px;filter:grayscale(0.2) contrast(0.9)">
-            <img src="verificado.png" alt="Verificado" style="height:34px;filter:grayscale(0.2) contrast(0.9)">
+            <img src="seguro.png" alt="Seguro" style="height:34px;">
+            <img src="pix.png" alt="PIX" style="height:34px;">
+            <img src="verificado.png" alt="Verificado" style="height:34px;">
           </div>
         </div>
       </div>
     </div>
 
-    <div class="features" aria-hidden="true">
+    <div class="features">
       <div class="feature">📸 Conteúdo novo toda semana</div>
       <div class="feature">🎥 Vídeos privados</div>
       <div class="feature">🔒 Privacidade e SEGREDO</div>
     </div>
 
-    <section class="feedback" aria-label="Depoimentos">
+    <section class="feedback">
       <h3 style="color:var(--pink2);margin-bottom:12px">💬 O que assinantes dizem</h3>
-      <div class="testi"><strong class="user">✔✔ Rafael</strong><div style="margin-top:6px">"Caralho Bruna, esse conteúdo é insano. Valeu cada centavo!"</div></div>
-      <div class="testi"><strong class="user">✔✔ Lucas</strong><div style="margin-top:6px">"Entrega rápida e resposta real. Recomendo!"</div></div>
-      <div class="testi"><strong class="user">✔✔ Pedro</strong><div style="margin-top:6px">"Melhor conteúdo que já comprei. Viciado."</div></div>
+      <div class="testi"><strong>✔✔ Rafael</strong><div>"Esse conteúdo é insano. Valeu cada centavo!"</div></div>
+      <div class="testi"><strong>✔✔ Lucas</strong><div>"Entrega rápida e resposta real. Recomendo!"</div></div>
+      <div class="testi"><strong>✔✔ Pedro</strong><div>"Melhor conteúdo que já comprei. Viciado."</div></div>
     </section>
-
-    <div class="extra-section">
-      <h3>🔒 Garantia & Privacidade</h3>
-      <p>Pagamentos via PIX ou links seguros. Suas informações são protegidas — o conteúdo fica restrito apenas para assinantes.</p>
-      <h3 style="margin-top:18px">❓ Perguntas frequentes</h3>
-      <p><b>Quando recebo o acesso?</b> Após enviar comprovante no WhatsApp eu libero manualmente — ou, se usar gateway com webhook, a liberação pode ser automática.</p>
-      <p><b>Posso cancelar?</b> Sim — o plano mensal pode ser cancelado a qualquer momento.</p>
-    </div>
-
   </main>
 
   <footer>
-    ©️ 2025 Bruna VIP — Todos os direitos reservados
+    ©️ 2025 Maria Eduarda VIP — Todos os direitos reservados
   </footer>
 
-  <!-- downsell modal (desativado por padrão) -->
-  <div id="downsellModal" style="display:none">
-    <div class="modalCard">
-      <h3>Oferta Relâmpago</h3>
-      <p>Quer um desconto? Garanta agora por R$14,90.</p>
-      <div style="display:flex;gap:10px;justify-content:center;margin-top:10px">
-        <a id="downsellLink" class="pay-blue" href="pix-offer2.html">Quero o desconto</a>
-        <button id="downsellClose" class="btn btn-ghost">Fechar</button>
-      </div>
-    </div>
-  </div>
-
-<script>
-  // links quick
-  const WHATS = "5511962833961";
-
-  // Enviar mimo: abre WhatsApp sem mensagem
-  document.getElementById('mimoBtn').href = `https://wa.me/${WHATS}`;
-
-  // pay buttons já apontam para pix-month.html e pix-lifetime.html (substitui pelos seus links do gateway se preferir)
-  // Exemplo: document.getElementById('payMonth').href = 'https://www.mercadopago.com/checkout/link-que-gera';
-  // document.getElementById('payLifetime').href = 'https://...';
-
-  // stats scroll UX para mobile
-  const stats = document.querySelector('.stats');
-  stats && stats.addEventListener('wheel', (e) => {
-    if (window.innerWidth < 700) {
-      e.preventDefault();
-      stats.scrollLeft += e.deltaY;
+  <!-- Efeito de digitação -->
+  <script>
+    const text = "Maria Eduarda VIP 💖";
+    let i = 0;
+    function typeEffect() {
+      if(i < text.length){
+        document.getElementById("typed").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect,120);
+      }
     }
-  }, { passive: false });
-
-  // downsell modal close
-  const downsellClose = document.getElementById('downsellClose');
-  downsellClose && downsellClose.addEventListener('click', ()=> { document.getElementById('downsellModal').style.display = 'none'; });
-</script>
+    typeEffect();
+  </script>
 </body>
 </html>
