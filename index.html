@@ -38,6 +38,13 @@
       color: #ff4da6;
       margin: 15px 0 5px;
     }
+    .highlight {
+      font-size: 16px;
+      color: #ddd;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      font-style: italic;
+    }
     .stats {
       display: flex;
       justify-content: center;
@@ -133,7 +140,9 @@
 
   <main>
     <h1>Bruna VIP 💖</h1>
-    <p>Conteúdo exclusivo. Acesso mensal.</p>
+    <p class="highlight">✨ Descubra meu lado secreto...  
+    momentos que você nunca viu, só para quem está do meu lado VIP.  
+    Se você gosta de exclusividade, aqui é o seu lugar ✨</p>
 
     <div class="stats">
       <div><span id="fotos">71</span> Fotos</div>
@@ -152,11 +161,10 @@
       <p>Quer chegar mais perto de mim do que de qualquer outra pessoa❓</p>
 
       <ul>
-        <li>📸 Fotos explícitas exclusivas</li>
-        <li>🎥 Vídeos privados e sem cortes</li>
-        <li>💬 Contato direto comigo</li>
-        <li>🔐 Conteúdo que não posto em lugar nenhum</li>
-        <li>⭐ Atenção VIP e respostas rápidas</li>
+        <li>📈 DICK RATING</li>
+        <li>📌 PINNED CHAT</li>
+        <li>🔝 PRIORITY DM</li>
+        <li>🔞 EARLY XXX VIDS ➕ EXCLUSIVE BUNDLE 🎁</li>
       </ul>
 
       <p class="price">Tudo isso por apenas <b>R$14,90/mês 💎</b></p>
@@ -173,12 +181,26 @@
     let seguidores = localStorage.getItem("seguidores") || 1260;
     document.getElementById("seguidores").innerText = seguidores;
 
+    // Verificar se já seguiu
+    let jaSeguiu = localStorage.getItem("jaSeguiu") || false;
+    if (jaSeguiu === "true") {
+      document.getElementById("seguirBtn").innerText = "✔ Seguindo";
+      document.getElementById("seguirBtn").style.opacity = "0.6";
+      document.getElementById("seguirBtn").style.pointerEvents = "none";
+    }
+
     // Função de seguir
     document.getElementById("seguirBtn").addEventListener("click", function(e){
       e.preventDefault();
-      seguidores++;
-      document.getElementById("seguidores").innerText = seguidores;
-      localStorage.setItem("seguidores", seguidores);
+      if (localStorage.getItem("jaSeguiu") !== "true") {
+        seguidores++;
+        document.getElementById("seguidores").innerText = seguidores;
+        localStorage.setItem("seguidores", seguidores);
+        localStorage.setItem("jaSeguiu", "true");
+        this.innerText = "✔ Seguindo";
+        this.style.opacity = "0.6";
+        this.style.pointerEvents = "none";
+      }
     });
   </script>
 
