@@ -6,110 +6,78 @@
   <title>Bruna VIP 💖</title>
   <style>
     :root{
-      --bg:#070708;
-      --card:#0f1012;
-      --accent1:#ff007a;
-      --accent2:#ff6fb3;
+      --bg:#000000;
+      --card:#0a0a0a;
+      --accent1:#0077ff;
+      --accent2:#33a1ff;
       --muted:#bdbfc3;
-      --glass: rgba(255,255,255,0.03);
     }
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family: Inter, Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg,#020203 0%, var(--bg) 100%);
+      background: var(--bg);
       color:#fff;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
       text-align:center;
       padding-bottom:48px;
     }
     a{color:inherit;text-decoration:none}
 
-    /* topbar - prova social */
     .topbar{
       background: linear-gradient(90deg,var(--accent1),var(--accent2));
-      color:#111;padding:8px 12px;font-weight:800;font-size:14px;
-      display:flex;align-items:center;justify-content:center;gap:10px;
-      box-shadow: 0 6px 24px rgba(255,0,128,0.06);
+      color:#fff;padding:8px 12px;font-weight:700;font-size:14px;
     }
 
-    header{padding:36px 16px 24px; position:relative;}
-    .profile-wrap{max-width:980px;margin:0 auto}
+    header{padding:36px 16px 24px;}
     .profile-pic{
-      width:170px;height:170px;border-radius:50%;border:6px solid var(--accent1);
-      display:block;margin:0 auto;border-image:linear-gradient(90deg,var(--accent1),var(--accent2)) 1;
-      box-shadow: 0 20px 60px rgba(255,0,128,0.12);
-      background-size:cover;background-position:center;
-      transition: transform .35s ease, box-shadow .35s ease;
+      width:170px;height:170px;border-radius:50%;
+      border:6px solid var(--accent2);
+      display:block;margin:0 auto;
+      box-shadow:0 20px 60px rgba(0,119,255,0.25);
     }
-    .profile-pic:hover{transform:translateY(-6px);box-shadow:0 30px 80px rgba(255,0,128,0.22)}
 
-    main{max-width:980px;margin:18px auto;padding:0 18px}
-
-    h1{color:var(--accent2);margin:14px 0 6px;font-size:30px;letter-spacing:0.2px}
+    main{max-width:960px;margin:18px auto;padding:0 18px}
+    h1{color:var(--accent2);margin:14px 0 6px;font-size:30px}
     .subtitle{color:var(--muted);margin-bottom:14px;font-size:15px}
 
-    /* stats - sempre em uma linha (com scroll horizontal em mobile) */
     .stats{
-      display:flex;gap:18px;justify-content:center;align-items:center;margin:12px 0 16px;
-      padding:6px;flex-wrap:nowrap;overflow-x:auto;
+      display:flex;gap:18px;justify-content:center;margin:12px 0 16px;
+      flex-wrap:wrap;
     }
     .stat{
-      min-width:100px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:12px;padding:10px 14px;font-size:13px;color:var(--muted);box-shadow:0 8px 28px rgba(0,0,0,0.5);
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      background:var(--card);
+      border-radius:12px;padding:10px 14px;
+      font-size:13px;color:var(--muted);
     }
     .stat .num{color:var(--accent2);font-weight:900;font-size:18px;margin-bottom:4px}
-    .stat .label{font-size:12px;color:#cfcfd1}
 
-    /* buttons */
     .buttons{display:flex;gap:12px;justify-content:center;margin:18px 0;flex-wrap:wrap}
     .btn{padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer;border:0}
-    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#111;box-shadow:0 12px 36px rgba(255,0,128,0.12)}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .btn-blue{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.2);color:var(--muted)}
     .btn-wide{min-width:240px}
 
-    /* offer box */
     .offer{
-      background:#fff;color:#111;padding:22px;border-radius:14px;margin:20px auto;max-width:820px;
-      box-shadow:0 18px 60px rgba(0,0,0,0.6);text-align:left;
-      display:flex;gap:18px;align-items:center;flex-wrap:wrap;
+      background:#fff;color:#111;padding:22px;border-radius:14px;
+      margin:20px auto;max-width:700px;
+      box-shadow:0 18px 60px rgba(0,0,0,0.6);
+      text-align:left;
     }
-    .offer-left{flex:1;min-width:260px}
-    .offer-right{width:320px;min-width:260px}
-    .offer h2{color:var(--accent2);margin:0 0 8px;font-size:20px}
-    .offer p{color:#333;margin:6px 0;line-height:1.45;font-size:14px}
-    .plan{background:var(--card);padding:12px;border-radius:10px;margin-bottom:10px;color:#fff;display:flex;flex-direction:column;gap:8px}
+    .offer h2{color:var(--accent1);margin-bottom:8px;font-size:20px}
+    .plan{background:#0a0a0a;padding:16px;border-radius:10px;margin-bottom:14px;color:#fff}
     .plan .title{font-weight:800;color:var(--accent2)}
-    .plan .price{font-weight:900;font-size:18px;color:#ffe}
+    .plan .price{font-weight:900;font-size:18px;color:#fff;margin-top:4px}
 
-    /* features */
     .features{display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap}
-    .feature{background:var(--card);padding:14px;border-radius:10px;min-width:180px;flex:1;box-shadow:0 10px 30px rgba(0,0,0,0.45)}
+    .feature{background:#0a0a0a;padding:14px;border-radius:10px;min-width:180px;flex:1}
 
-    /* feedback */
-    .feedback{max-width:900px;margin:28px auto;text-align:left;padding:0 6px}
-    .testi{background:#0f0f11;padding:12px;border-radius:10px;margin-bottom:12px;color:#eee}
+    .feedback{max-width:800px;margin:28px auto;text-align:left}
+    .testi{background:#111;padding:12px;border-radius:10px;margin-bottom:12px;color:#eee}
+
+    .extra-section{max-width:800px;margin:40px auto;padding:20px;background:#0a0a0a;border-radius:12px;text-align:left}
+    .extra-section h3{color:var(--accent2);margin-bottom:10px}
 
     footer{margin-top:36px;color:#aaa;font-size:13px}
-
-    /* modal */
-    #downsellModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;z-index:9999}
-    .modalCard{background:#fff;color:#111;padding:18px;border-radius:12px;max-width:460px;text-align:center}
-    .modalCard h3{color:var(--accent1);margin-bottom:8px}
-
-    /* responsive tweaks */
-    @media(max-width:880px){
-      .offer{flex-direction:column}
-      .offer-right{width:100%}
-    }
-    @media(max-width:520px){
-      h1{font-size:22px}
-      .profile-pic{width:130px;height:130px}
-      .stat{min-width:84px}
-      .btn-wide{width:100%}
-    }
   </style>
 </head>
 <body>
@@ -117,139 +85,66 @@
   <div class="topbar">🔥 12 pessoas compraram nas últimas horas!</div>
 
   <header>
-    <div class="profile-wrap">
-      <!-- FOTO DE PERFIL: coloque perfil.jpg na raiz do repo -->
-      <img src="perfil.jpg" alt="Foto de perfil" class="profile-pic" id="profilePic">
-    </div>
+    <img src="perfil.jpg" alt="Foto de perfil" class="profile-pic">
   </header>
 
   <main>
     <h1>Bruna VIP 💖</h1>
-    <p class="subtitle">✨ Conteúdo privado, mensagens diretas e conteúdo diário — só pra assinantes ✨</p>
+    <p class="subtitle">✨ Conteúdo privado, mensagens diretas e muito mais ✨</p>
 
-    <div class="stats" aria-hidden="false">
-      <div class="stat"><div class="num">107</div><div class="label">Posts</div></div>
-      <div class="stat"><div class="num">128</div><div class="label">Mídia</div></div>
-      <div class="stat"><div class="num">723</div><div class="label">Seguidores</div></div>
-      <div class="stat"><div class="num">401</div><div class="label">Curtidas</div></div>
+    <div class="stats">
+      <div class="stat"><div class="num">107</div>Posts</div>
+      <div class="stat"><div class="num">128</div>Mídia</div>
+      <div class="stat"><div class="num">723</div>Seguidores</div>
+      <div class="stat"><div class="num">401</div>Curtidas</div>
     </div>
 
     <div class="buttons">
-      <!-- Enviar mimo: abre WhatsApp sem mensagem; o cliente escolhe o que enviar -->
-      <a id="mimoBtn" class="btn btn-primary btn-wide" href="#" target="_blank" rel="noopener">🎁 Enviar mimo</a>
-
-      <!-- Mensagem de suporte: abre WhatsApp com mensagem de ajuda -->
-      <a id="suporteBtn" class="btn btn-ghost" href="https://wa.me/5511962833961?text=Oi%2C%20preciso%20de%20ajuda%20com%20o%20VIP" target="_blank" rel="noopener">💬 Mensagem (suporte)</a>
+      <a class="btn btn-blue btn-wide" href="https://wa.me/5511962833961" target="_blank">🎁 Enviar mimo</a>
+      <a class="btn btn-ghost" href="https://wa.me/5511962833961?text=Oi%2C%20preciso%20de%20ajuda" target="_blank">💬 Suporte</a>
     </div>
 
-    <!-- Oferta com dois planos -->
-    <div class="offer" role="region" aria-label="Planos">
-      <div class="offer-left">
-        <h2>💖 Entre no VIP — escolha seu plano</h2>
-        <p>Receba conteúdo imediato, mensagens privadas e acesso exclusivo a fotos e vídeos inéditos. Escolha o plano que prefere:</p>
-
-        <div class="plan" aria-hidden="false" style="margin-top:10px">
-          <div class="title">1 mês</div>
-          <div class="price">R$24,90</div>
-          <div style="color:#ddd;font-size:13px">Renovação mensal. Acesso completo enquanto vigente.</div>
-          <div style="margin-top:8px">
-            <a class="btn btn-primary btn-wide" href="pix-month.html" id="payMonth">Pagar 1 mês — R$24,90</a>
-          </div>
-        </div>
-
-        <div class="plan" aria-hidden="false">
-          <div class="title">Vitalício</div>
-          <div class="price">R$55,90</div>
-          <div style="color:#ddd;font-size:13px">Acesso vitalício + destaque nos posts exclusivos — escolha quem quer o melhor.</div>
-          <div style="margin-top:8px">
-            <a class="btn btn-primary btn-wide" href="pix-lifetime.html" id="payLifetime">Pagar Vitalício — R$55,90</a>
-          </div>
-        </div>
+    <div class="offer">
+      <h2>💖 Escolha seu plano</h2>
+      <div class="plan">
+        <div class="title">1 mês</div>
+        <div class="price">R$19,90</div>
+        <a class="btn btn-blue btn-wide" href="pix-month.html">Pagar 1 mês — R$19,90</a>
       </div>
-
-      <div class="offer-right" aria-hidden="true" style="display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center">
-        <div style="width:120px;height:120px;border-radius:12px;background:linear-gradient(180deg,#fff,#ffe);display:flex;align-items:center;justify-content:center;color:#111;font-weight:900">VIP</div>
-        <div style="color:#666;font-size:13px;text-align:center">Suporte rápido via WhatsApp<br>+55 11 96283-3961</div>
-        <div style="margin-top:6px;font-size:13px;color:#444">Selos de confiança</div>
-        <div style="display:flex;gap:8px;margin-top:8px">
-          <img src="seguro.png" alt="Seguro" style="height:34px;filter:grayscale(0.2) contrast(0.9)">
-          <img src="pix.png" alt="PIX" style="height:34px;filter:grayscale(0.2) contrast(0.9)">
-          <img src="verificado.png" alt="Verificado" style="height:34px;filter:grayscale(0.2) contrast(0.9)">
-        </div>
+      <div class="plan">
+        <div class="title">Vitalício</div>
+        <div class="price">R$59,90</div>
+        <a class="btn btn-blue btn-wide" href="pix-lifetime.html">Pagar Vitalício — R$59,90</a>
       </div>
     </div>
 
-    <div class="features" aria-hidden="true" style="margin-top:20px">
-      <div class="feature"><strong>📸 Conteúdo novo</strong><div style="color:#bfbfbf;margin-top:6px;font-size:13px">Atualizações semanais</div></div>
-      <div class="feature"><strong>💬 Resposta direta</strong><div style="color:#bfbfbf;margin-top:6px;font-size:13px">Mensagens reais e atenção</div></div>
-      <div class="feature"><strong>🔒 Privacidade</strong><div style="color:#bfbfbf;margin-top:6px;font-size:13px">Conteúdo protegido</div></div>
+    <div class="features">
+      <div class="feature">📸 Fotos inéditas toda semana</div>
+      <div class="feature">🎥 Vídeos privados e exclusivos</div>
+      <div class="feature">💌 Contato direto comigo</div>
     </div>
 
-    <section class="feedback" aria-label="Depoimentos">
-      <h3 style="color:var(--accent2);margin-bottom:12px">💬 O que assinantes dizem</h3>
-      <div class="testi"><strong class="user">✔✔ Rafael</strong><div style="margin-top:6px">"Caralho Bruna, esse conteúdo é insano. Valeu cada centavo!"</div></div>
-      <div class="testi"><strong class="user">✔✔ Lucas</strong><div style="margin-top:6px">"Entrega rápida e resposta real. Recomendo!"</div></div>
-      <div class="testi"><strong class="user">✔✔ Pedro</strong><div style="margin-top:6px">"Melhor conteúdo que já comprei. Viciado."</div></div>
+    <section class="feedback">
+      <h3 style="color:#33a1ff;margin-bottom:12px">💬 O que meus assinantes dizem</h3>
+      <div class="testi"><strong>✔✔ Rafael</strong><p>"Esse conteúdo é insano, vale cada centavo!"</p></div>
+      <div class="testi"><strong>✔✔ Lucas</strong><p>"Você responde de verdade, nunca vi igual 😍"</p></div>
+      <div class="testi"><strong>✔✔ Pedro</strong><p>"Muito melhor que qualquer site, virei fã 💖"</p></div>
     </section>
+
+    <!-- NOVA SEÇÃO: Garantia e FAQ -->
+    <div class="extra-section">
+      <h3>🔒 Garantia & Privacidade</h3>
+      <p>Todo pagamento é 100% seguro via PIX. Seus dados ficam protegidos e você recebe acesso imediato após a confirmação.</p>
+      <h3 style="margin-top:20px">❓ Perguntas frequentes</h3>
+      <p><b>Quando recebo o acesso?</b> Assim que o pagamento for confirmado, você recebe o link privado no WhatsApp.</p>
+      <p><b>Posso cancelar?</b> Sim, o plano mensal pode ser cancelado a qualquer momento.</p>
+      <p><b>O vitalício expira?</b> Não! O vitalício é acesso pra sempre.</p>
+    </div>
+
   </main>
 
   <footer>
-    ©️ 2025 Bruna VIP — Suporte: +55 11 96283-3961
+    ©️ 2025 Bruna VIP — Todos os direitos reservados
   </footer>
-
-  <!-- Downsell modal (opcional, não exibido por padrão) -->
-  <div id="downsellModal">
-    <div class="modalCard">
-      <h3>Oferta Relâmpago</h3>
-      <p>Quer um desconto? Garanta agora por R$14,90.</p>
-      <div style="display:flex;gap:10px;justify-content:center;margin-top:10px">
-        <a id="downsellLink" class="btn btn-primary" href="pix-offer2.html">Quero o desconto</a>
-        <button id="downsellClose" class="btn btn-ghost">Fechar</button>
-      </div>
-    </div>
-  </div>
-
-<script>
-  // CONFIG
-  const WHATS = "5511962833961";
-  const PIX_MONTH_PAGE = "pix-month.html";      // página destino para 1 mês
-  const PIX_LIFETIME_PAGE = "pix-lifetime.html"; // página destino para vitalício
-
-  // botão "Enviar mimo" -> abre whatsapp sem mensagem
-  const mimoBtn = document.getElementById('mimoBtn');
-  mimoBtn.href = `https://wa.me/${WHATS}`;
-  mimoBtn.addEventListener('click', ()=> {
-    // abre no target _blank via href
-  });
-
-  // Exemplo: podemos enriquecer os links com Order ID se quiser depois
-  function genOrderId(){
-    return Date.now().toString(36).toUpperCase().slice(-6) + '-' + Math.random().toString(36).slice(2,5).toUpperCase();
-  }
-  // se quiser passar order id nos pagamentos, a gente anexa ?order=XXX nos links:
-  // document.getElementById('payMonth').href = PIX_MONTH_PAGE + '?order=' + genOrderId();
-
-  // downsell modal controls
-  const downsellModal = document.getElementById('downsellModal');
-  const downsellClose = document.getElementById('downsellClose');
-  downsellClose && downsellClose.addEventListener('click', ()=> downsellModal.style.display = 'none');
-
-  // optional: show downsell after some time of inactivity (disabled by default)
-  // setTimeout(()=> { downsellModal.style.display = 'flex'; }, 1000 * 60 * 5);
-
-  // small UX: make stats scroll nice on mobile
-  const stats = document.querySelector('.stats');
-  stats.addEventListener('wheel', (e) => {
-    if (window.innerWidth < 700) {
-      e.preventDefault();
-      stats.scrollLeft += e.deltaY;
-    }
-  }, { passive: false });
-
-  // accessibility: close modal with escape
-  document.addEventListener('keydown', (e)=> { if(e.key === 'Escape'){ downsellModal.style.display='none'; } });
-
-  // small animation for CTA (pulse) - already in CSS
-</script>
 </body>
 </html>
