@@ -1,218 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Bruna VIP 💖</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #111 0%, #222 100%);
-      color: #fff;
-      text-align: center;
+    :root{
+      --bg1:#0b0b0f; --accent1:#ff0080; --accent2:#ff4da6; --muted:#bfbfbf;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Arial,system-ui,sans-serif; background:linear-gradient(180deg,#070707 0%, #111 100%); color:#fff;
+      -webkit-font-smoothing:antialiased; text-align:center; padding-bottom:40px;
     }
 
-    /* Topbar de prova social */
-    .topbar {
-      background: #ff0080;
-      color: #fff;
-      padding: 8px;
-      font-size: 14px;
-      font-weight: bold;
-      text-align: center;
+    .topbar{background:var(--accent1); color:#111; padding:8px 12px; font-weight:700}
+    header{padding:40px 20px 100px; position:relative;}
+    .profile-pic{
+      width:160px;height:160px;border-radius:50%;border:5px solid var(--accent1);display:block;margin:0 auto;
+      box-shadow:0 12px 40px rgba(255,0,128,0.12); animation:pulse 2s infinite;
     }
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
 
-    header {
-      padding: 40px 20px 100px;
-      position: relative;
-    }
+    main{max-width:980px;margin:0 auto;padding:0 18px}
+    h1{color:var(--accent2);margin:14px 0 6px;font-size:28px}
+    .highlight{color:#ddd;font-style:italic;margin-bottom:14px}
 
-    .profile-pic {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 5px solid #ff0080;
-      margin: auto;
-      display: block;
-      box-shadow: 0 0 25px #ff0080;
-      animation: pulse 2s infinite;
-    }
+    /* stats always in one row: horizontal scroll if tiny screens */
+    .stats{display:flex;gap:18px;justify-content:center;align-items:center;margin:12px 0;flex-wrap:nowrap;overflow-x:auto;padding:6px 4px}
+    .stats > div{min-width:90px;text-align:center;font-size:15px}
+    .stats span{display:block;color:var(--accent2);font-weight:800;font-size:18px}
 
-    main {
-      margin-top: 20px;
-      padding: 20px;
-    }
+    .buttons{display:flex;gap:12px;justify-content:center;margin:18px 0;flex-wrap:wrap}
+    .btn{padding:12px 16px;border-radius:10px;font-weight:800;cursor:pointer;text-decoration:none;color:#111;background:linear-gradient(90deg,var(--accent1),var(--accent2));display:inline-flex;align-items:center;gap:8px}
+    .btn.ghost{background:#232326;color:#fff;border:1px solid rgba(255,255,255,0.03)}
 
-    h1 {
-      color: #ff4da6;
-      margin: 15px 0 5px;
-    }
+    .offer-box{background:#fff;color:#111;padding:24px;border-radius:12px;margin:22px auto;max-width:700px;box-shadow:0 16px 50px rgba(0,0,0,0.6)}
+    .offer-box h2{color:var(--accent2);margin:0 0 8px}
+    .offer-desc{color:#333;margin:6px 0 12px;line-height:1.5}
+    .price{font-weight:900;font-size:20px;color:#000;margin:10px 0}
 
-    .highlight {
-      font-size: 16px;
-      color: #ddd;
-      margin-bottom: 20px;
-      font-style: italic;
-    }
+    .btn-blue{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#111;padding:14px 22px;border-radius:12px;font-size:18px;display:inline-block;box-shadow:0 14px 40px rgba(255,0,128,0.12)}
+    .btn-blue:hover{transform:translateY(-3px)}
 
-    /* Estatísticas */
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin: 15px 0;
-      flex-wrap: wrap;
-    }
+    .features{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+    .feature-box{background:#161617;padding:18px;border-radius:12px;min-width:200px;flex:1;box-shadow:0 8px 30px rgba(0,0,0,0.5)}
+    .feature-box i{font-size:28px;color:var(--accent1);display:block;margin-bottom:8px}
 
-    .stats div {
-      font-size: 16px;
-    }
+    .feedback{max-width:780px;margin:28px auto;text-align:left}
+    .whatsapp-msg{background:#0f0f10;padding:12px;border-radius:10px;margin:10px 0;color:#eee}
+    .whatsapp-msg .user{color:#8fffa8;font-weight:700;margin-bottom:6px}
 
-    .stats span {
-      display: block;
-      font-weight: bold;
-      color: #ff4da6;
-      font-size: 18px;
-    }
+    footer{color:#aaa;margin-top:32px;font-size:13px}
 
-    /* Botões */
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 20px 0;
-    }
+    /* modal downsell */
+    #downsellModal, #exitPopup{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;z-index:9999}
+    .modalCard{background:#fff;color:#111;padding:18px;border-radius:12px;max-width:420px;text-align:center}
+    .modalCard h3{color:var(--accent1);margin:6px 0 10px}
+    .modalCard p{color:#333;margin:8px 0}
 
-    .btn {
-      padding: 12px 18px;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      display: inline-block;
-      transition: 0.3s;
+    /* small screens */
+    @media(max-width:520px){
+      h1{font-size:22px}
+      .profile-pic{width:130px;height:130px}
+      .stats > div{min-width:80px}
+      .btn-blue{width:100%}
+      .modalCard{margin:12px}
     }
-
-    .btn:hover { opacity: 0.85; }
-    .btn-pink { background: #ff0080; color: white; }
-    .btn-gray { background: #333; color: white; }
-
-    /* Box de oferta */
-    .offer-box {
-      background: #fff;
-      color: #111;
-      padding: 25px;
-      margin: 30px auto;
-      border-radius: 12px;
-      max-width: 650px;
-      text-align: center;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
-      animation: fadeIn 1.5s ease;
-    }
-
-    .offer-box h2 { color: #ff4da6; margin-bottom: 15px; }
-    .offer-desc {
-      font-size: 15px;
-      color: #333;
-      line-height: 1.5;
-      margin: 10px 0 20px;
-    }
-    .price {
-      margin: 15px 0 10px;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .btn-blue {
-      background: linear-gradient(45deg,#ff0080,#ff4da6);
-      color: white;
-      padding: 16px 24px;
-      border-radius: 10px;
-      font-weight: bold;
-      display: block;
-      margin: 20px auto 0;
-      max-width: 280px;
-      text-decoration: none;
-      font-size: 20px;
-      box-shadow: 0 0 20px #ff0080;
-      transition: 0.3s;
-      animation: pulse 1.5s infinite;
-    }
-    .btn-blue:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px #ff4da6;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-
-    /* Depoimentos */
-    .feedback {
-      margin: 40px auto;
-      max-width: 700px;
-    }
-    .feedback h3 {
-      margin-bottom: 15px;
-      color: #ff4da6;
-    }
-    .whatsapp-msg {
-      background:#1f1f1f;
-      padding:15px;
-      border-radius:10px;
-      text-align:left;
-      max-width:350px;
-      margin:10px auto;
-    }
-    .whatsapp-msg p { margin:0; font-size:14px; }
-    .user { color:#0f0; font-size:13px; margin-bottom:5px; }
-
-    footer {
-      margin: 40px 0 15px;
-      font-size: 12px;
-      color: #aaa;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Exit Popup */
-    #exitPopup {
-      display:none;
-      position:fixed;
-      top:0; left:0;
-      width:100%; height:100%;
-      background:rgba(0,0,0,0.8);
-      z-index:9999;
-      justify-content:center;
-      align-items:center;
-    }
-    #exitPopup .popup-box {
-      background:#fff;
-      color:#111;
-      padding:30px;
-      border-radius:12px;
-      max-width:400px;
-      text-align:center;
-      box-shadow:0 0 20px #ff0080;
-      animation:fadeIn 0.5s ease;
-    }
-    #exitPopup h2 { color:#ff0080; }
-    #exitPopup button {
-      margin-top:15px;
-      padding:12px 20px;
-      background:#ff0080;
-      color:#fff;
-      border:none;
-      border-radius:8px;
-      cursor:pointer;
-      font-weight:bold;
-    }
-    #exitPopup button:hover { opacity:0.8; }
   </style>
 </head>
 <body>
@@ -220,138 +74,177 @@
   <div class="topbar">🔥 5 pessoas compraram nas últimas horas!</div>
 
   <header>
-    <img src="perfil.jpg" alt="Foto de perfil" class="profile-pic">
+    <!-- Só FOTO DE PERFIL conforme pediu: nome do arquivo: perfil.jpg (raiz do repo) -->
+    <img src="perfil.jpg" alt="Foto de perfil" class="profile-pic" id="profilePic">
   </header>
 
   <main>
     <h1>Bruna VIP 💖</h1>
-    <p class="highlight">✨ Descubra meu lado secreto, só para assinantes VIP ✨</p>
+    <p class="highlight">✨ Conteúdo exclusivo, privado e liberado rápido — só pra assinantes ✨</p>
 
-    <div class="stats">
+    <div class="stats" aria-hidden="false">
       <div><span id="fotos">137</span> Fotos</div>
       <div><span id="videos">89</span> Vídeos</div>
-      <div><span id="seguidores">1524</span> Seguidores</div>
-      <div><span id="curtidas">863</span> Curtidas</div>
+      <div><span id="presentes">—</span> Presente</div> <!-- substitui seguidores por Presente -->
+      <div><span id="curtidas">3</span> Curtidas</div>
     </div>
 
     <div class="buttons">
-      <a href="#" id="seguirBtn" class="btn btn-pink">➕ Seguir</a>
-      <a href="https://wa.me/5511962833961" target="_blank" class="btn btn-gray">💬 Mensagem</a>
+      <!-- botão PRESENTE: abre WhatsApp com mensagem pronta (usa seu número) -->
+      <a id="presenteBtn" class="btn" href="#" aria-label="Pedir presente via WhatsApp">🎁 Pedir Presente</a>
+
+      <!-- mensagem direta -->
+      <a href="https://wa.me/5511962833961" target="_blank" class="btn ghost">💬 Mensagem</a>
     </div>
 
     <div class="offer-box">
       <h2>💖 SEJA MEU VIP AGORA 💖</h2>
-      <p class="offer-desc">Quer sentir uma conexão única comigo?<br>
-      No meu VIP você entra no meu mundo particular,<br>
-      com conteúdos que você nunca vai encontrar em outro lugar 🔥</p>
+      <p class="offer-desc">Entre no VIP e receba conteúdos inéditos, mensagens privadas e muito mais. Pague com PIX e envie comprovante pelo WhatsApp.</p>
 
-      <p class="price">Tudo isso por apenas <b>R$24,90/mês 💎</b></p>
+      <div class="price">R$24,90 / mês</div>
 
-      <p style="color:red; font-weight:bold; font-size:16px;">
-        ⏰ Promoção válida só por <span id="timer"></span>!
-      </p>
+      <p style="color:#c62828;font-weight:800;">⏰ Oferta expira em <span id="timer">10:00</span></p>
 
-      <a href="pix.html" class="btn-blue">🚀 GARANTIR ACESSO VIP AGORA!</a>
+      <a id="ctaPay" class="btn-blue" href="pix.html">🚀 GARANTIR ACESSO VIP AGORA!</a>
     </div>
 
-    <div class="feedback">
+    <div class="features" aria-hidden="true">
+      <div class="feature-box"><i>📸</i>Fotos exclusivas</div>
+      <div class="feature-box"><i>🎥</i>Vídeos privados</div>
+      <div class="feature-box"><i>💌</i>Contato direto</div>
+    </div>
+
+    <section class="feedback" aria-label="Depoimentos">
       <h3>💬 O que meus assinantes dizem:</h3>
+
       <div class="whatsapp-msg">
-        <p class="user">✔✔ Rafael - Ontem 23:12</p>
-        <p>"Caralho Bruna, esse vídeo me deixou maluco 🔥🔥 valeu cada centavo!"</p>
+        <div class="user">✔✔ Rafael - Ontem 23:12</div>
+        <div>"Caralho Bruna, esse vídeo me deixou maluco 🔥🔥"</div>
       </div>
+
       <div class="whatsapp-msg">
-        <p class="user">✔✔ Lucas - Hoje 09:44</p>
-        <p>"Nunca vi nada igual, você responde de verdade 😍"</p>
+        <div class="user">✔✔ Lucas - Hoje 09:44</div>
+        <div>"Nunca vi nada igual, você responde de verdade 😍"</div>
       </div>
+
       <div class="whatsapp-msg">
-        <p class="user">✔✔ Pedro - Hoje 14:30</p>
-        <p>"Muito melhor que qualquer site, tô viciado 💖"</p>
+        <div class="user">✔✔ Pedro - Hoje 14:30</div>
+        <div>"Muito melhor que qualquer site, tô viciado 💖"</div>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer>
-    ©️ 2025 Bruna VIP - Todos os direitos reservados
-    <div style="margin-top:20px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
-      <img src="img/seguro.png" alt="Compra Segura" style="height:30px;">
-      <img src="img/pix.png" alt="Pagamento PIX" style="height:30px;">
-      <img src="img/verificado.png" alt="Site Verificado" style="height:30px;">
-    </div>
+    ©️ 2025 Bruna VIP — Pagamentos via PIX. Suporte: +55 11 96283-3961
   </footer>
 
-  <!-- Exit Popup -->
-  <div id="exitPopup">
-    <div class="popup-box">
-      <h2>⚠️ ESPERA AÍ!</h2>
-      <p>Essa é sua <b>última chance</b> de entrar no meu VIP com desconto exclusivo:</p>
-      <p style="font-size:18px;"><s>R$24,90</s> 👉 <b style="color:red;">R$19,97</b></p>
-      <a href="pix.html"><button>👉 GARANTIR COM DESCONTO</button></a>
+  <!-- Downsell modal que aparece quando o timer expira -->
+  <div id="downsellModal">
+    <div class="modalCard" role="dialog" aria-modal="true" aria-labelledby="downsellTitle">
+      <h3 id="downsellTitle">Espera! Oferta Relâmpago 💥</h3>
+      <p>Você pode garantir acesso com desconto AGORA por <strong>R$14,90</strong>.</p>
+      <p>Oferta limitada — clique para pagar via PIX com valor especial.</p>
+      <div style="display:flex;gap:8px;justify-content:center;margin-top:12px">
+        <a id="downsellPay" class="btn" href="pix-offer2.html">👉 Quero o desconto</a>
+        <button id="noThanks" class="btn ghost">✖ Não, obrigado</button>
+      </div>
     </div>
   </div>
 
-  <script>
-    // Botão seguir
-    const seguirBtn = document.getElementById("seguirBtn");
-    let seguindo = localStorage.getItem("seguindo") === "true";
+  <!-- Exit popup (opcional) -->
+  <div id="exitPopup">
+    <div class="modalCard">
+      <h3>⚠️ Espera aí!</h3>
+      <p>Última chance de entrar com desconto especial — R$19,97</p>
+      <a href="pix.html" class="btn">👉 GARANTIR COM DESCONTO</a>
+    </div>
+  </div>
 
-    function updateSeguirBtn() {
-      if (seguindo) {
-        seguirBtn.innerText = "✔ Seguindo";
-        seguirBtn.style.opacity = "0.6";
-      } else {
-        seguirBtn.innerText = "➕ Seguir";
-        seguirBtn.style.opacity = "1";
-      }
-    }
-    updateSeguirBtn();
+<script>
+/* ========== CONFIG (edite se quiser) ========== */
+const WHATS_NUMBER = "5511962833961"; // seu número (já fornecido)
+const TIMER_MINUTES = 10; // tempo da oferta em minutos (padrão: 10)
+const DOWNSIDE_PAGE = "pix-offer2.html"; // página com chave/valor alternativo para downsell
+/* ============================================== */
 
-    seguirBtn.addEventListener("click", function(e){
-      e.preventDefault();
-      seguindo = !seguindo;
-      localStorage.setItem("seguindo", seguindo);
-      updateSeguirBtn();
-    });
+// Order ID (gera um id curto)
+function genOrderId(){
+  const t = Date.now().toString(36).slice(-6).toUpperCase();
+  const r = Math.random().toString(36).slice(2,5).toUpperCase();
+  return `${t}-${r}`;
+}
+const ORDER_ID = genOrderId();
 
-    // Timer regressivo
-    let endTime = localStorage.getItem("endTime");
-    if (!endTime) {
-      let now = new Date();
-      now.setHours(now.getHours() + 5);
-      endTime = now.getTime();
-      localStorage.setItem("endTime", endTime);
-    }
+// Presente -> abre WhatsApp com mensagem pronta
+const presenteBtn = document.getElementById('presenteBtn');
+presenteBtn.href = `https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent("Oi, posso te mandar um presente? Order ID: " + ORDER_ID)}`;
+presenteBtn.target = "_blank";
 
-    function updateTimer() {
-      let now = new Date().getTime();
-      let distance = endTime - now;
+// Timer: salva tempo final (10 minutos) por visitante para urgência persistente
+const storageKey = "brunavip_endTime_v2";
+let endTime = localStorage.getItem(storageKey);
+if(!endTime){
+  const now = Date.now();
+  endTime = now + TIMER_MINUTES * 60 * 1000;
+  localStorage.setItem(storageKey, endTime);
+} else {
+  endTime = parseInt(endTime, 10);
+}
 
-      if (distance < 0) {
-        let reset = new Date();
-        reset.setHours(reset.getHours() + 5);
-        endTime = reset.getTime();
-        localStorage.setItem("endTime", endTime);
-        distance = endTime - now;
-      }
+function updateTimer(){
+  const now = Date.now();
+  let diff = endTime - now;
+  if(diff <= 0){
+    // exibe downsell modal
+    document.getElementById('timer').innerText = "00:00";
+    showDownsell();
+    return;
+  }
+  const m = Math.floor(diff / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('timer').innerText = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+}
+updateTimer();
+setInterval(updateTimer, 1000);
 
-      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+// mostra modal de downsell
+function showDownsell(){
+  const modal = document.getElementById('downsellModal');
+  if(modal.style.display === 'flex') return;
+  modal.style.display = 'flex';
+  // atualiza link da oferta para passar order id (opcional)
+  const link = document.getElementById('downsellPay');
+  link.href = DOWNSIDE_PAGE + `?order=${ORDER_ID}`;
+}
 
-      document.getElementById("timer").innerText = hours + "h " + minutes + "m " + seconds + "s";
-    }
-    updateTimer();
-    setInterval(updateTimer, 1000);
+// Downsell buttons
+document.getElementById('noThanks').addEventListener('click', ()=>{
+  document.getElementById('downsellModal').style.display = 'none';
+});
 
-    // Exit popup
-    let popupShown = false;
-    document.addEventListener("mouseleave", function(e){
-      if (e.clientY < 10 && !popupShown) {
-        document.getElementById("exitPopup").style.display = "flex";
-        popupShown = true;
-      }
-    });
-  </script>
+// Exit popup on mouse leave (desktop)
+let popupShown = false;
+document.addEventListener('mouseleave', function(e){
+  if(e.clientY < 10 && !popupShown){
+    document.getElementById('exitPopup').style.display = 'flex';
+    popupShown = true;
+  }
+});
 
+// Accessibility: close modals on escape
+document.addEventListener('keydown', (ev)=>{
+  if(ev.key === 'Escape'){
+    document.getElementById('downsellModal').style.display = 'none';
+    document.getElementById('exitPopup').style.display = 'none';
+  }
+});
+
+/* ========== Observações importantes (não remove) ==========
+ - Crie a página pix-offer2.html contendo a cobrança/QR para R$14,90 (ou outro valor).
+ - Se preferir usar link do Mercado Pago, coloque-o em ctaPay.href ou no downsellPay.href.
+ - Para liberar acesso automático (webhook), integramos depois com PSP (Mercado Pago, Pagar.me, Gerencianet).
+ - Order ID ajuda identificar o comprovante quando o cliente mandar no WhatsApp.
+==========================================================*/
+</script>
 </body>
 </html>
