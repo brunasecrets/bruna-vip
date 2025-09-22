@@ -105,15 +105,22 @@
       font-size: 18px;
     }
     .btn-blue {
-      background: #007bff;
+      background: linear-gradient(45deg,#ff0080,#ff4da6);
       color: white;
-      padding: 14px 22px;
-      border-radius: 8px;
+      padding: 16px 24px;
+      border-radius: 10px;
       font-weight: bold;
       display: block;
-      margin: 15px auto 0;
-      max-width: 250px;
+      margin: 20px auto 0;
+      max-width: 280px;
       text-decoration: none;
+      font-size: 20px;
+      box-shadow: 0 0 20px #ff0080;
+      transition: 0.3s;
+    }
+    .btn-blue:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #ff4da6;
     }
     .features {
       display: flex;
@@ -129,6 +136,11 @@
       border-radius: 10px;
       box-shadow: 0 0 8px rgba(0,0,0,0.4);
       font-size: 14px;
+      transition: 0.3s;
+    }
+    .feature-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #ff0080;
     }
     .feature-box i {
       font-size: 30px;
@@ -143,13 +155,22 @@
       margin-bottom: 15px;
       color: #ff4da6;
     }
-    .feedback p {
-      background: #1f1f1f;
-      padding: 15px;
-      border-radius: 8px;
-      font-size: 14px;
-      margin: 10px 0;
-      color: #ccc;
+    .whatsapp-msg {
+      background:#1f1f1f;
+      padding:15px;
+      border-radius:10px;
+      text-align:left;
+      max-width:350px;
+      margin:10px auto;
+    }
+    .whatsapp-msg p {
+      margin:0;
+      font-size:14px;
+    }
+    .user {
+      color:#0f0;
+      font-size:13px;
+      margin-bottom:5px;
     }
     footer {
       margin: 40px 0 15px;
@@ -191,7 +212,13 @@
       com conteúdos que você nunca vai encontrar em outro lugar 🔥</p>
 
       <p class="price">Tudo isso por apenas <b>R$14,90/mês 💎</b></p>
-      <a href="pix.html" class="btn-blue">👉 ASSINAR AGORA</a>
+
+      <!-- Contador de urgência -->
+      <p style="color:red; font-weight:bold; font-size:16px;">
+        ⏰ Promoção válida só até <span id="timer"></span>!
+      </p>
+
+      <a href="pix.html" class="btn-blue">🚀 GARANTIR ACESSO VIP AGORA!</a>
     </div>
 
     <!-- Features -->
@@ -210,17 +237,31 @@
       </div>
     </div>
 
-    <!-- Feedback -->
+    <!-- Feedback estilo WhatsApp -->
     <div class="feedback">
       <h3>💬 O que meus assinantes dizem:</h3>
-      <p>🔥 "Vale cada centavo, conteúdo incrível e exclusivo!"</p>
-      <p>💖 "A Bruna responde no WhatsApp, é surreal!"</p>
-      <p>😍 "As fotos e vídeos são de outro nível, muito melhor que qualquer outro site."</p>
+      <div class="whatsapp-msg">
+        <p class="user">✔✔ Rafael - Ontem 23:12</p>
+        <p>"Caralho Bruna, esse vídeo me deixou maluco 🔥🔥 valeu cada centavo!"</p>
+      </div>
+      <div class="whatsapp-msg">
+        <p class="user">✔✔ Lucas - Hoje 09:44</p>
+        <p>"Nunca vi nada igual, você responde de verdade 😍"</p>
+      </div>
+      <div class="whatsapp-msg">
+        <p class="user">✔✔ Pedro - Hoje 14:30</p>
+        <p>"Muito melhor que qualquer site, tô viciado 💖"</p>
+      </div>
     </div>
   </main>
 
   <footer>
     ©️ 2025 Bruna VIP - Todos os direitos reservados
+    <div style="margin-top:20px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+      <img src="img/seguro.png" alt="Compra Segura" style="height:30px;">
+      <img src="img/pix.png" alt="Pagamento PIX" style="height:30px;">
+      <img src="img/verificado.png" alt="Site Verificado" style="height:30px;">
+    </div>
   </footer>
 
   <script>
@@ -249,6 +290,15 @@
         this.style.pointerEvents = "none";
       }
     });
+
+    // Timer de urgência
+    function countdown() {
+      let now = new Date();
+      now.setHours(now.getHours() + 1); // sempre dá 1h de prazo
+      document.getElementById("timer").innerText = now.toLocaleTimeString("pt-BR");
+    }
+    countdown();
+    setInterval(countdown, 1000);
   </script>
 
 </body>
