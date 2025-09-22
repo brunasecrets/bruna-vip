@@ -75,6 +75,7 @@
       border-radius: 8px;
       font-weight: bold;
       margin: 8px;
+      cursor: pointer;
     }
     .btn-outline {
       background: transparent;
@@ -91,6 +92,12 @@
       font-size: 14px;
       color: var(--dark);
       word-break: break-all;
+    }
+    .copy-alert {
+      color: green;
+      font-size: 13px;
+      margin-top: 8px;
+      display: none;
     }
     footer {
       text-align: center;
@@ -125,13 +132,33 @@
       <a href="https://buy.stripe.com/8x228t0h8aUqdWZb045Vu03" class="btn" target="_blank">Pagar com Cartão</a>
       <a href="#pix" class="btn btn-outline">Pagar com PIX</a>
     </div>
+
     <div id="pix" class="pix-box">
       <strong>Chave PIX (copia e cola):</strong><br>
-      00020101021226810014br.gov.bcb.pix2559qr.woovi.com/qr/v2/cob/21494979-e068-44f4-b5ec-d940e38e1373520400005303986540524.905802BR5909OASIS_PAY6009Sao_Paulo62290525508e64756ad841a0bc194f2ca63044619
+      <div id="pixKey">
+        00020101021226810014br.gov.bcb.pix2559qr.woovi.com/qr/v2/cob/21494979-e068-44f4-b5ec-d940e38e1373520400005303986540524.905802BR5909OASIS_PAY6009Sao_Paulo62290525508e64756ad841a0bc194f2ca63044619
+      </div>
+      <button class="btn" onclick="copyPix()">Copiar Chave PIX</button>
+      <div id="alert" class="copy-alert">✅ Copiado!</div>
     </div>
+
     <footer>
-      Após o pagamento, envie o comprovante para o WhatsApp: <strong>+55 11 96283-3961</strong>
+      Após o pagamento, envie o comprovante para o WhatsApp:<br>
+      <strong>+55 11 96283-3961</strong>
     </footer>
   </div>
+
+  <script>
+    function copyPix() {
+      const pixKey = document.getElementById("pixKey").innerText;
+      navigator.clipboard.writeText(pixKey).then(function() {
+        const alert = document.getElementById("alert");
+        alert.style.display = "block";
+        setTimeout(() => {
+          alert.style.display = "none";
+        }, 2000);
+      });
+    }
+  </script>
 </body>
 </html>
