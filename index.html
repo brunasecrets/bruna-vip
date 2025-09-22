@@ -3,162 +3,137 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bruna VIP — Acesso</title>
+  <title>Bruna VIP — Perfil</title>
   <style>
     :root {
-      --bg-color: #f5f5f5;
-      --card-bg: #ffffff;
+      --bg: #ffffff;
+      --header-bg: #f8f8f8;
+      --text-dark: #222;
+      --text-muted: #555;
       --accent: #ff2a68;
-      --muted: #7a7a7a;
-      --dark: #1a1a1a;
-      --white: #ffffff;
+      --white: #fff;
       font-family: "Helvetica Neue", Arial, sans-serif;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background: var(--bg-color);
-      color: var(--dark);
-      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text-dark);
     }
-    .container {
-      max-width: 500px;
-      margin: 40px auto;
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-    .banner {
-      width: 100%;
-      height: 300px;
-      background: url('https://i.imgur.com/XqSB3Ky.jpg') center/cover no-repeat;
+    .profile-header {
+      background: var(--header-bg);
+      padding: 30px;
+      text-align: center;
       position: relative;
     }
-    .banner-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.4);
-    }
-    .banner-text {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      color: var(--white);
-      font-size: 24px;
-      font-weight: bold;
+    .profile-header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--white);
+      margin-top: -60px; /* para sobrepor um pouco do header se quiser */
+      background: var(--white);
     }
     .profile-info {
-      padding: 20px;
-      text-align: center;
+      margin-top: 10px;
     }
     .profile-info h1 {
       font-size: 28px;
-      margin-bottom: 8px;
+      margin: 10px 0 5px;
     }
     .profile-info p {
-      color: var(--muted);
-      font-size: 16px;
-      margin-bottom: 20px;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0;
     }
-    .price {
-      font-size: 32px;
-      color: var(--accent);
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+    }
+    .stats div {
+      text-align: center;
+    }
+    .stats div span {
+      display: block;
+      font-size: 20px;
       font-weight: bold;
-      margin-bottom: 20px;
+      color: var(--accent);
     }
-    .btn {
+    .stats div small {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .btn-action {
       display: inline-block;
-      padding: 12px 24px;
+      margin: 0 5px;
+      padding: 10px 20px;
       background: var(--accent);
       color: var(--white);
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 6px;
       font-weight: bold;
-      margin: 8px;
-      cursor: pointer;
     }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--accent);
-      color: var(--accent);
-    }
-    .pix-box {
-      background: #fafafa;
-      padding: 15px;
-      margin: 20px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      text-align: center;
-      font-size: 14px;
-      color: var(--dark);
-      word-break: break-all;
-    }
-    .copy-alert {
-      color: green;
-      font-size: 13px;
-      margin-top: 8px;
-      display: none;
-    }
-    footer {
-      text-align: center;
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
       padding: 20px;
-      color: var(--muted);
-      font-size: 14px;
     }
-
-    @media (max-width: 480px) {
-      .banner {
-        height: 200px;
-      }
-      .banner-text {
-        font-size: 20px;
-      }
-      .price {
-        font-size: 28px;
-      }
+    .content-grid .item {
+      width: 100%;
+      height: 100px;
+      background: #ddd;
+      border-radius: 6px;
+      /* placeholder, coloque imagem real se quiser: background-image:url(...); background-size:cover; */
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="banner">
-      <div class="banner-overlay"></div>
-      <div class="banner-text">Bem-vindo ao meu mundo VIP</div>
-    </div>
+
+  <header class="profile-header">
+    <!-- Se tiver uma imagem de perfil, coloque aqui -->
+    <img src="https://imgur.com/a/URSvCiq.jpg" alt="Foto de perfil" />
     <div class="profile-info">
       <h1>Bruna VIP</h1>
-      <p>Conteúdo exclusivo mensal</p>
-      <div class="price">R$ 24,90 / mês</div>
-      <a href="https://buy.stripe.com/8x228t0h8aUqdWZb045Vu03" class="btn" target="_blank">Pagar com Cartão</a>
-      <a href="#pix" class="btn btn-outline">Pagar com PIX</a>
+      <p>Conteúdo exclusivo. Acesso mensal.</p>
     </div>
+  </header>
 
-    <div id="pix" class="pix-box">
-      <strong>Chave PIX (copia e cola):</strong><br>
-      <div id="pixKey">
-        00020101021226810014br.gov.bcb.pix2559qr.woovi.com/qr/v2/cob/21494979-e068-44f4-b5ec-d940e38e1373520400005303986540524.905802BR5909OASIS_PAY6009Sao_Paulo62290525508e64756ad841a0bc194f2ca63044619
-      </div>
-      <button class="btn" onclick="copyPix()">Copiar Chave PIX</button>
-      <div id="alert" class="copy-alert">✅ Copiado!</div>
+  <div class="stats">
+    <div>
+      <span>167</span>
+      <small>Fotos</small>
     </div>
-
-    <footer>
-      Após o pagamento, envie o comprovante para o WhatsApp:<br>
-      <strong>+55 11 96283-3961</strong>
-    </footer>
+    <div>
+      <span>74</span>
+      <small>Vídeos</small>
+    </div>
+    <div>
+      <span>24,90</span>
+      <small>Mensal (R$)</small>
+    </div>
   </div>
 
-  <script>
-    function copyPix() {
-      const pixKey = document.getElementById("pixKey").innerText;
-      navigator.clipboard.writeText(pixKey).then(function() {
-        const alert = document.getElementById("alert");
-        alert.style.display = "block";
-        setTimeout(() => {
-          alert.style.display = "none";
-        }, 2000);
-      });
-    }
-  </script>
+  <div style="text-align:center; margin-bottom:20px;">
+    <a href="#" class="btn-action">Assinar</a>
+    <a href="#" class="btn-action">Enviar mensagem</a>
+  </div>
+
+  <div class="content-grid">
+    <!-- Itens de foto/vídeo -->
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <!-- ... repita para simular várias miniaturas -->
+  </div>
+
 </body>
 </html>
