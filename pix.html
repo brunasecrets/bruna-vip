@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento Pix - Bruna VIP</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align:center; padding:20px; }
+    .box { border:1px solid #ddd; padding:20px; border-radius:8px; background:#fff; }
+    .pix-key { background:#f7f7f7; padding:10px; border:1px dashed #888; margin:15px 0; word-break:break-all; }
+    button { background:#28a745; color:#fff; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-size:16px; }
+  </style>
+</head>
+<body>
+
+  <h2>💖 Pagamento Bruna VIP 💖</h2>
+  <div class="box">
+    <p>Use a chave Pix abaixo para pagar <b>R$10</b>:</p>
+    <div id="pixKey" class="pix-key">00020101021226810014br.gov.bcb.pix2559qr.woovi.com/qr/v2/cob/bd585baa-1fba-4968-ac8a-1db2e218366c520400005303986540510.005802BR5909OASIS_PAY6009Sao_Paulo6229052533d6debb98c7417cac3570f056304644F</div>
+    <button onclick="copyPix()">📋 Copiar chave Pix</button>
+  </div>
+
+  <script>
+    function copyPix() {
+      var pixKey = document.getElementById("pixKey").innerText;
+      navigator.clipboard.writeText(pixKey);
+      alert("Chave Pix copiada com sucesso!");
+    }
+  </script>
+
+</body>
+</html>
