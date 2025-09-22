@@ -194,10 +194,10 @@
     <p class="highlight">✨ Descubra meu lado secreto, só para assinantes VIP ✨</p>
 
     <div class="stats">
-      <div><span id="fotos">71</span> Fotos</div>
-      <div><span id="videos">65</span> Vídeos</div>
-      <div><span id="seguidores">1260</span> Seguidores</div>
-      <div><span id="curtidas">530</span> Curtidas</div>
+      <div><span id="fotos">137</span> Fotos</div>
+      <div><span id="videos">89</span> Vídeos</div>
+      <div><span id="seguidores">1524</span> Seguidores</div>
+      <div><span id="curtidas">863</span> Curtidas</div>
     </div>
 
     <div class="buttons">
@@ -215,7 +215,7 @@
 
       <!-- Contador de urgência -->
       <p style="color:red; font-weight:bold; font-size:16px;">
-        ⏰ Promoção válida só até <span id="timer"></span>!
+        ⏰ Promoção válida só por <span id="timer"></span>!
       </p>
 
       <a href="pix.html" class="btn-blue">🚀 GARANTIR ACESSO VIP AGORA!</a>
@@ -266,7 +266,7 @@
 
   <script>
     // Carregar seguidores salvos
-    let seguidores = localStorage.getItem("seguidores") || 1260;
+    let seguidores = localStorage.getItem("seguidores") || 1524;
     document.getElementById("seguidores").innerText = seguidores;
 
     // Verificar se já seguiu
@@ -291,14 +291,37 @@
       }
     });
 
-    // Timer de urgência
-    function countdown() {
+    // Contador de urgência real (5h correndo)
+    let endTime = localStorage.getItem("endTime");
+    if (!endTime) {
       let now = new Date();
-      now.setHours(now.getHours() + 1); // sempre dá 1h de prazo
-      document.getElementById("timer").innerText = now.toLocaleTimeString("pt-BR");
+      now.setHours(now.getHours() + 5); // prazo de 5 horas
+      endTime = now.getTime();
+      localStorage.setItem("endTime", endTime);
     }
-    countdown();
-    setInterval(countdown, 1000);
+
+    function updateTimer() {
+      let now = new Date().getTime();
+      let distance = endTime - now;
+
+      if (distance < 0) {
+        // Resetar contador quando acabar
+        let reset = new Date();
+        reset.setHours(reset.getHours() + 5);
+        endTime = reset.getTime();
+        localStorage.setItem("endTime", endTime);
+        distance = endTime - now;
+      }
+
+      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("timer").innerText = hours + "h " + minutes + "m " + seconds + "s";
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
   </script>
 
 </body>
