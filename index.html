@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bruna VIP 💖</title>
   <style>
     body {
@@ -13,41 +13,12 @@
       text-align: center;
     }
 
-    .upload-controls {
-      position: fixed;
-      right: 14px;
-      top: 14px;
-      z-index: 99999;
-      display: flex;
-      gap: 8px;
-      flex-direction: column;
-    }
-    .upload-controls button {
-      background: rgba(0,0,0,0.6);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #fff;
-      padding: 8px 10px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 12px;
-      backdrop-filter: blur(4px);
-    }
-    .upload-controls button:hover { opacity: 0.9; }
-
-    .topbar {
-      background: #ff0080;
-      color: #fff;
-      padding: 8px;
-      font-size: 14px;
-      font-weight: bold;
-      text-align: center;
-    }
-
     header {
-      background: #222 no-repeat center/cover;
+      background: url("img/fundo.jpg") no-repeat center/cover;
       padding: 50px 20px 100px;
       position: relative;
     }
+
     .profile-pic {
       width: 150px;
       height: 150px;
@@ -60,18 +31,18 @@
       left: 0;
       right: 0;
       box-shadow: 0 0 25px #ff0080;
-      object-fit: cover;
-      background: #222;
     }
 
     main {
       margin-top: 100px;
       padding: 20px;
     }
+
     h1 {
       color: #ff4da6;
       margin: 15px 0 5px;
     }
+
     .highlight {
       font-size: 16px;
       color: #ddd;
@@ -82,18 +53,15 @@
     .stats {
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 15px;
+      gap: 25px;
       margin: 15px 0;
-      flex-wrap: nowrap;
-      overflow-x: auto;
+      flex-wrap: wrap;
     }
+
     .stats div {
-      font-size: 14px;
-      flex: 1;
-      min-width: 80px;
-      text-align: center;
+      font-size: 16px;
     }
+
     .stats span {
       display: block;
       font-weight: bold;
@@ -107,6 +75,7 @@
       gap: 15px;
       margin: 20px 0;
     }
+
     .btn {
       padding: 12px 18px;
       border-radius: 8px;
@@ -115,7 +84,11 @@
       display: inline-block;
       transition: 0.3s;
     }
-    .btn:hover { opacity: 0.85; }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+
     .btn-gray { background: #333; color: white; }
 
     .offer-box {
@@ -129,16 +102,19 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.5);
       animation: fadeIn 1.5s ease;
     }
+
     .offer-box h2 {
       color: #ff4da6;
       margin-bottom: 15px;
     }
+
     .offer-desc {
       font-size: 15px;
       color: #333;
       line-height: 1.5;
       margin: 10px 0 20px;
     }
+
     .price {
       margin: 15px 0 10px;
       font-weight: bold;
@@ -158,17 +134,11 @@
       font-size: 20px;
       box-shadow: 0 0 20px #ff0080;
       transition: 0.3s;
-      animation: pulse 1.5s infinite;
     }
+
     .btn-blue:hover {
       transform: scale(1.05);
       box-shadow: 0 0 30px #ff4da6;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
     }
 
     .features {
@@ -179,6 +149,7 @@
       max-width: 800px;
       flex-wrap: wrap;
     }
+
     .feature-box {
       flex: 1;
       background: #1f1f1f;
@@ -189,10 +160,12 @@
       transition: 0.3s;
       min-width: 200px;
     }
+
     .feature-box:hover {
       transform: scale(1.05);
       box-shadow: 0 0 20px #ff0080;
     }
+
     .feature-box i {
       font-size: 30px;
       color: #ff0080;
@@ -203,10 +176,12 @@
       margin: 40px auto;
       max-width: 700px;
     }
+
     .feedback h3 {
       margin-bottom: 15px;
       color: #ff4da6;
     }
+
     .whatsapp-msg {
       background:#1f1f1f;
       padding:15px;
@@ -215,42 +190,16 @@
       max-width:350px;
       margin:10px auto;
     }
-    .whatsapp-msg p { margin:0; font-size:14px; }
-    .user { color:#0f0; font-size:13px; margin-bottom:5px; }
 
-    .comments-box {
-      background: #1f1f1f;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 600px;
-      margin: 30px auto;
-      text-align: left;
+    .whatsapp-msg p {
+      margin:0;
+      font-size:14px;
     }
-    .comments-box h3 { color: #ff4da6; margin-bottom: 10px; }
-    .comments-box textarea {
-      width: 100%;
-      height: 80px;
-      border-radius: 8px;
-      border: none;
-      padding: 10px;
-      resize: none;
-    }
-    .comments-box button {
-      margin-top: 10px;
-      padding: 10px 18px;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .comments-box button.save { background:#ff0080; color:#fff; }
-    .comments-box button.clear { background:#444; color:#fff; margin-left:8px; }
-    .comment-item {
-      background: #2a2a2a;
-      padding: 8px 12px;
-      border-radius: 6px;
-      margin-top: 8px;
-      font-size: 14px;
+
+    .user {
+      color:#0f0;
+      font-size:13px;
+      margin-bottom:5px;
     }
 
     footer {
@@ -264,6 +213,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Exit Popup */
     #exitPopup {
       display:none;
       position:fixed;
@@ -274,6 +224,7 @@
       justify-content:center;
       align-items:center;
     }
+
     #exitPopup .popup-box {
       background:#fff;
       color:#111;
@@ -284,7 +235,11 @@
       box-shadow:0 0 20px #ff0080;
       animation:fadeIn 0.5s ease;
     }
-    #exitPopup h2 { color:#ff0080; }
+
+    #exitPopup h2 {
+      color:#ff0080;
+    }
+
     #exitPopup button {
       margin-top:15px;
       padding:12px 20px;
@@ -295,23 +250,16 @@
       cursor:pointer;
       font-weight:bold;
     }
-    #exitPopup button:hover { opacity:0.8; }
+
+    #exitPopup button:hover {
+      opacity:0.8;
+    }
   </style>
 </head>
 <body>
 
-  <div class="upload-controls">
-    <input id="bgInput" type="file" accept="image/*" style="display:none">
-    <input id="pfInput" type="file" accept="image/*" style="display:none">
-    <button id="chooseBgBtn">Escolher fundo</button>
-    <button id="choosePfBtn">Escolher perfil</button>
-    <button id="clearImgs">Limpar imagens</button>
-  </div>
-
-  <div class="topbar">🔥 5 pessoas compraram nas últimas horas!</div>
-
-  <header id="heroHeader">
-    <img src="" alt="Foto de perfil" id="profilePic" class="profile-pic">
+  <header>
+    <img src="img/perfil.jpg" alt="Foto de perfil" class="profile-pic">
   </header>
 
   <main>
@@ -319,75 +267,122 @@
     <p class="highlight">✨ Descubra meu lado secreto, só para assinantes VIP ✨</p>
 
     <div class="stats">
-      <div><span id="fotos">137</span> Fotos</div>
-      <div><span id="videos">89</span> Vídeos</div>
-      <div><span id="seguidores">1524</span> Seguidores</div>
-      <div><span id="curtidas">863</span> Curtidas</div>
+      <div><span>137</span> Fotos</div>
+      <div><span>89</span> Vídeos</div>
+      <div><span>1524</span> Seguidores</div>
+      <div><span>863</span> Curtidas</div>
     </div>
 
     <div class="buttons">
       <a href="https://wa.me/5511962833961" target="_blank" class="btn btn-gray">💬 Mensagem</a>
     </div>
 
-    <!-- resto igual ao anterior (oferta, comentários, popup, etc) -->
+    <div class="offer-box">
+      <h2>💖 SEJA MEU VIP AGORA 💖</h2>
+      <p class="offer-desc">Quer sentir uma conexão única comigo?  
+      No meu VIP você entra no meu mundo particular,  
+      com conteúdos que você nunca vai encontrar em outro lugar 🔥</p>
+
+      <p class="price">Tudo isso por apenas <b>R$24,90/mês 💎</b></p>
+
+      <p style="color:red; font-weight:bold; font-size:16px;">
+        ⏰ Promoção válida só por <span id="timer"></span>!
+      </p>
+
+      <a href="pix.html" class="btn-blue">🚀 GARANTIR ACESSO VIP AGORA!</a>
+    </div>
+
+    <div class="features">
+      <div class="feature-box">
+        <i>📸</i><br>
+        Fotos exclusivas e inéditas
+      </div>
+      <div class="feature-box">
+        <i>🎥</i><br>
+        Vídeos privados e sensuais
+      </div>
+      <div class="feature-box">
+        <i>💌</i><br>
+        Contato direto comigo
+      </div>
+    </div>
+
+    <div class="feedback">
+      <h3>💬 O que meus assinantes dizem:</h3>
+      <div class="whatsapp-msg">
+        <p class="user">✔✔ Rafael - Ontem 23:12</p>
+        <p>"Caralho Bruna, esse vídeo me deixou maluco 🔥🔥 valeu cada centavo!"</p>
+      </div>
+      <div class="whatsapp-msg">
+        <p class="user">✔✔ Lucas - Hoje 09:44</p>
+        <p>"Nunca vi nada igual, você responde de verdade 😍"</p>
+      </div>
+      <div class="whatsapp-msg">
+        <p class="user">✔✔ Pedro - Hoje 14:30</p>
+        <p>"Muito melhor que qualquer site, tô viciado 💖"</p>
+      </div>
+    </div>
   </main>
 
-  <!-- scripts para upload e timer -->
+  <footer>
+    ©️ 2025 Bruna VIP - Todos os direitos reservados
+    <div style="margin-top:20px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+      <img src="img/seguro.png" alt="Compra Segura" style="height:30px;">
+      <img src="img/pix.png" alt="Pagamento PIX" style="height:30px;">
+      <img src="img/verificado.png" alt="Site Verificado" style="height:30px;">
+    </div>
+  </footer>
+
+  <div id="exitPopup">
+    <div class="popup-box">
+      <h2>⚠️ ESPERA AÍ!</h2>
+      <p>Essa é sua <b>última chance</b> de entrar no meu VIP com desconto exclusivo:</p>
+      <p style="font-size:18px;"><s>R$24,90</s> 👉 <b style="color:red;">R$19,97</b></p>
+      <a href="pix.html"><button>👉 GARANTIR COM DESCONTO</button></a>
+    </div>
+  </div>
+
   <script>
-    const heroHeader = document.getElementById('heroHeader');
-    const profilePic = document.getElementById('profilePic');
-    const bgInput = document.getElementById('bgInput');
-    const pfInput = document.getElementById('pfInput');
-    const chooseBgBtn = document.getElementById('chooseBgBtn');
-    const choosePfBtn = document.getElementById('choosePfBtn');
-    const clearImgsBtn = document.getElementById('clearImgs');
-
-    chooseBgBtn.addEventListener('click', () => bgInput.click());
-    choosePfBtn.addEventListener('click', () => pfInput.click());
-
-    bgInput.addEventListener('change', async (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-      const dataUrl = await fileToDataURL(file);
-      localStorage.setItem('bruna_bg', dataUrl);
-      applyBackground(dataUrl);
-    });
-
-    pfInput.addEventListener('change', async (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-      const dataUrl = await fileToDataURL(file);
-      localStorage.setItem('bruna_pf', dataUrl);
-      profilePic.src = dataUrl;
-    });
-
-    clearImgsBtn.addEventListener('click', () => {
-      localStorage.removeItem('bruna_bg');
-      localStorage.removeItem('bruna_pf');
-      heroHeader.style.backgroundImage = '';
-      profilePic.src = '';
-    });
-
-    function fileToDataURL(file) {
-      return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = reject;
-        reader.readAsDataURL(file);
-      });
-    }
-    function applyBackground(dataUrl) {
-      heroHeader.style.backgroundImage = `url('${dataUrl}')`;
-      heroHeader.style.backgroundSize = 'cover';
-      heroHeader.style.backgroundPosition = 'center';
+    // Timer
+    let endTime = localStorage.getItem("endTime");
+    if (!endTime) {
+      let now = new Date();
+      now.setHours(now.getHours() + 5);
+      endTime = now.getTime();
+      localStorage.setItem("endTime", endTime);
     }
 
-    window.addEventListener('load', () => {
-      const bg = localStorage.getItem('bruna_bg');
-      const pf = localStorage.getItem('bruna_pf');
-      if (bg) applyBackground(bg);
-      if (pf) profilePic.src = pf;
+    function updateTimer() {
+      let now = new Date().getTime();
+      let distance = endTime - now;
+
+      if (distance < 0) {
+        let reset = new Date();
+        reset.setHours(reset.getHours() + 5);
+        endTime = reset.getTime();
+        localStorage.setItem("endTime", endTime);
+        distance = endTime - now;
+      }
+
+      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("timer").innerText = hours + "h " + minutes + "m " + seconds + "s";
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+
+    // Exit popup
+    let popupShown = false;
+    document.addEventListener("mouseleave", function(e){
+      if (e.clientY < 10 && !popupShown) {
+        document.getElementById("exitPopup").style.display = "flex";
+        popupShown = true;
+      }
     });
   </script>
+
 </body>
 </html>
