@@ -3,30 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagamento Pix - Bruna VIP</title>
+  <title>Pagamento Bruna VIP 💖</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align:center; padding:20px; }
-    .box { border:1px solid #ddd; padding:20px; border-radius:8px; background:#fff; }
-    .pix-key { background:#f7f7f7; padding:10px; border:1px dashed #888; margin:15px 0; word-break:break-all; }
-    button { background:#28a745; color:#fff; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-size:16px; }
+    body { font-family: Arial, sans-serif; background: #f8f8f8; text-align: center; padding: 20px; }
+    .box { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.1); margin: 20px auto; max-width: 500px; }
+    .pix-key { background: #f0f0f0; padding: 10px; border-radius: 8px; word-wrap: break-word; margin: 15px 0; }
+    button { padding: 12px 20px; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; margin: 10px; }
+    .copy { background: #28a745; color: white; }
+    .next { background: #ff0080; color: white; width: 80%; max-width: 300px; }
   </style>
 </head>
 <body>
 
   <h2>💖 Pagamento Bruna VIP 💖</h2>
   <div class="box">
-    <p>Use a chave Pix abaixo para pagar <b>R$10</b>:</p>
-    <div id="pixKey" class="pix-key">00020101021226810014br.gov.bcb.pix2559qr.woovi.com/qr/v2/cob/bd585baa-1fba-4968-ac8a-1db2e218366c520400005303986540510.005802BR5909OASIS_PAY6009Sao_Paulo6229052533d6debb98c7417cac3570f056304644F</div>
-    <button onclick="copyPix()">📋 Copiar chave Pix</button>
+    <p>Copie a chave Pix abaixo e cole no app do seu banco para pagar <b>R$10</b>:</p>
+    <div class="pix-key" id="pix">00020101021226810014br.gov.bcb.pix255q... (sua chave Pix)</div>
+    <button class="copy" onclick="copyPix()">📋 Copiar chave Pix</button>
+    <p style="margin-top:15px;">✅ Assim que você realizar o pagamento, clique no botão abaixo:</p>
+    <a href="obrigado.html"><button class="next">Efetuei o pagamento</button></a>
   </div>
 
   <script>
     function copyPix() {
-      var pixKey = document.getElementById("pixKey").innerText;
-      navigator.clipboard.writeText(pixKey);
-      alert("Chave Pix copiada com sucesso!");
+      const pix = document.getElementById("pix").innerText;
+      navigator.clipboard.writeText(pix).then(() => {
+        alert("Chave Pix copiada!");
+      });
     }
   </script>
-
 </body>
 </html>
