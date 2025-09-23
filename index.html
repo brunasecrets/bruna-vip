@@ -63,11 +63,7 @@
     /* stats */
     .stats{display:flex;gap:18px;justify-content:center;margin:12px 0 16px;padding:6px;flex-wrap:nowrap;overflow-x:auto}
     .stat{min-width:100px;padding:10px 14px;font-size:13px;color:var(--muted);display:flex;flex-direction:column;align-items:center}
-    .stat .num{color:var(--white);font-weight:900;font-size:20px;margin-bottom:4px;animation: glow 2s infinite}
-    @keyframes glow {
-      0%,100%{text-shadow:0 0 10px var(--pink1)}
-      50%{text-shadow:0 0 20px var(--pink2)}
-    }
+    .stat .num{color:var(--white);font-weight:900;font-size:20px;margin-bottom:4px}
 
     /* botões */
     .buttons{display:flex;gap:12px;justify-content:center;margin:18px 0;flex-wrap:wrap}
@@ -81,8 +77,6 @@
     .offer{margin:20px auto;max-width:900px;padding:0 6px}
     .offer-box{background:var(--card);padding:24px;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,0.8);display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;animation:fadeInUp 1.2s ease}
     .offer-left{flex:1;min-width:320px}
-    .offer-right{width:360px;min-width:260px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px}
-
     .offer h2{color:var(--pink2);margin:0 0 10px;font-size:22px}
     .offer p.lead{color:#ccc;margin:6px 0 14px;font-size:15px}
 
@@ -100,9 +94,10 @@
     .feature{background:#0c0c0c;padding:14px;border-radius:10px;min-width:180px;flex:1;color:var(--muted);transition:.3s}
     .feature:hover{transform:scale(1.05);box-shadow:0 0 15px rgba(255,0,128,0.3)}
 
-    /* feedback */
+    /* feedback estilo WhatsApp */
     .feedback{max-width:900px;margin:28px auto;text-align:left}
     .testi{background:#0b0b0b;padding:14px;border-radius:10px;margin-bottom:12px;color:#eee;animation:fadeIn 1s ease}
+    .testi strong{color:#0f0}
 
     footer{margin-top:36px;color:#8f8f8f;font-size:13px}
 
@@ -121,7 +116,7 @@
   </header>
 
   <main>
-    <h1 id="typed"></h1>
+    <h1>Maria Eduarda VIP 💖</h1>
     <p class="subtitle">✨ Conteúdo privado, mensagens diretas e conteúdo diário — só pra assinantes ✨</p>
 
     <div class="stats">
@@ -141,30 +136,20 @@
       <div class="offer-box">
         <div class="offer-left">
           <h2>💖 Escolha seu plano</h2>
-          <p class="lead">No meu VIP você terá acesso a fotos e vídeos proibidos 🔞, vai falar direto comigo 💌 e ainda terá surpresas semanais. 100% seguro, rápido e discreto.</p>
+          <p class="lead">No meu VIP você terá acesso a fotos e vídeos proibidos 🔞, vai falar direto comigo 💌 e ainda terá surpresas semanais.</p>
 
           <div class="plan">
             <div class="title">1 mês</div>
             <div class="price">R$19,90</div>
             <div class="desc">Acesso completo por 30 dias: fotos inéditas, vídeos exclusivos, mensagens privadas e prioridade nas respostas.</div>
-            <a class="pay-blue" href="pix-month.html">🚀 Pagar 1 mês — R$19,90</a>
+            <a class="pay-blue" href="pix-month.html">Pagar 1 mês — R$19,90</a>
           </div>
 
           <div class="plan">
             <div class="title">Vitalício</div>
             <div class="price">R$59,90</div>
             <div class="desc">Acesso para sempre + prioridade VIP nas mensagens e destaque nos conteúdos — pra quem quer a parada completa.</div>
-            <a class="pay-blue" href="pix-lifetime.html">🔥 Pagar Vitalício — R$59,90</a>
-          </div>
-        </div>
-
-        <div class="offer-right">
-          <div style="width:120px;height:120px;border-radius:12px;background:linear-gradient(180deg,var(--pink2),#ffdcec);display:flex;align-items:center;justify-content:center;color:#111;font-weight:900">VIP</div>
-          <div style="color:#444;font-size:13px;text-align:center;margin-top:6px">Selos de confiança</div>
-          <div style="display:flex;gap:8px;margin-top:8px">
-            <img src="seguro.png" alt="Seguro" style="height:34px;">
-            <img src="pix.png" alt="PIX" style="height:34px;">
-            <img src="verificado.png" alt="Verificado" style="height:34px;">
+            <a class="pay-blue" href="pix-lifetime.html">Pagar Vitalício — R$59,90</a>
           </div>
         </div>
       </div>
@@ -174,33 +159,18 @@
       <div class="feature">📸 Conteúdo novo toda semana</div>
       <div class="feature">🎥 Vídeos privados</div>
       <div class="feature">🔒 Privacidade e SEGREDO</div>
-      <div class="feature">💌 Conversa direta comigo</div>
     </div>
 
     <section class="feedback">
       <h3 style="color:var(--pink2);margin-bottom:12px">💬 O que assinantes dizem</h3>
-      <div class="testi"><strong>✔✔ Rafael</strong><div>"Esse conteúdo é insano. Valeu cada centavo!"</div></div>
-      <div class="testi"><strong>✔✔ Lucas</strong><div>"Entrega rápida e resposta real. Recomendo!"</div></div>
-      <div class="testi"><strong>✔✔ Pedro</strong><div>"Melhor conteúdo que já comprei. Viciado."</div></div>
+      <div class="testi"><strong>✔✔ João - Ontem 22:10</strong><div>"Maria, tu é surreal, vale cada centavo 🔥"</div></div>
+      <div class="testi"><strong>✔✔ Lucas - Hoje 09:15</strong><div>"Melhor site que já assinei, respondes rápido demais 😍"</div></div>
+      <div class="testi"><strong>✔✔ Pedro - Hoje 14:30</strong><div>"Fiquei viciado no teu VIP, não largo mais 💖"</div></div>
     </section>
   </main>
 
   <footer>
     ©️ 2025 Maria Eduarda VIP — Todos os direitos reservados
   </footer>
-
-  <!-- Efeito de digitação -->
-  <script>
-    const text = "Maria Eduarda VIP 💖";
-    let i = 0;
-    function typeEffect() {
-      if(i < text.length){
-        document.getElementById("typed").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeEffect,120);
-      }
-    }
-    typeEffect();
-  </script>
 </body>
 </html>
