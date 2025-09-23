@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Pagamento PIX • Maria Eduarda VIP</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;font-family:"Inter",sans-serif;background:#000;color:#fff;padding:16px}
+  .container{max-width:900px;margin:auto}
+  .card{background:#111;padding:20px;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.6)}
+  header{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .logo{width:58px;height:58px;border-radius:12px;background:linear-gradient(135deg,#ff007a,#ff6fb3);display:flex;align-items:center;justify-content:center;font-weight:800;color:#111}
+  h1{margin:0;font-size:18px;color:#ff6fb3}
+  .lead{color:#aaa;font-size:14px}
+  .alert{background:#1a1a1a;border:1px solid #333;padding:10px;border-radius:8px;margin-top:12px;color:#ffb3d9;font-size:14px;text-align:center}
+  .panel{background:#0b0b0b;padding:14px;border-radius:12px;margin-top:12px}
+  .label{color:#9aa0a6;font-size:13px;margin-bottom:6px}
+  .pix-text{background:#000;padding:10px;border-radius:8px;font-weight:700;font-size:14px;word-break:break-all}
+  .controls{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .btn{background:linear-gradient(90deg,#ff007a,#ff6fb3);color:#111;border:0;padding:10px 12px;border-radius:10px;font-weight:800;cursor:pointer}
+  .btn.ghost{background:transparent;border:1px solid #333;color:#aaa}
+  #qrcode canvas{max-width:100%;background:#fff;border-radius:10px;padding:8px}
+  .success{background:linear-gradient(90deg,#0ee9a7,#0ecf7a);color:#012;padding:10px;border-radius:10px;font-weight:800;margin-top:10px;display:none;text-align:center}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <header>
+      <div class="logo">VIP</div>
+      <div>
+        <h1>Pague com PIX — Maria Eduarda VIP</h1>
+        <p class="lead">Plano Vitalício — <b>R$59,90</b>. Após pagar, clique em "Efetuei pagamento" e envie o comprovante no WhatsApp.</p>
+      </div>
+    </header>
+
+    <div class="alert">⚡ Faça o PIX no valor de <b>R$59,90</b>. Depois clique em <b>Efetuei pagamento</b>.</div>
+
+    <div class="panel">
+      <div class="label">PIX Copia & Cola</div>
+      <div id="pixKey" class="pix-text">6eaff2b1-ae8e-4327-acea-d435fcecfe72</div>
+
+      <div class="controls">
+        <button id="copyBtn" class="btn">📋 Copiar PIX</button>
+        <button id="paidBtn" class="btn ghost">✅ Efetuei pagamento</button>
+        <a id="supportBtn" href="https://wa.me/5511962833961?text=Oi%2C%20preciso%20de%20ajuda%20no%20pagamento" target="_blank" class="btn">💬 Suporte</a>
+      </div>
+
+      <div class="success" id="successBanner">✔ PIX copiado — cole no app do banco!</div>
+    </div>
+
+    <div style="margin-top:20px;text-align:center" id="qrcode"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script>
+const PIX_CODE = "6eaff2b1-ae8e-4327-acea-d435fcecfe72";
+
+QRCode.toCanvas(document.getElementById('qrcode'), PIX_CODE, { width: 260 }, function(err){ if(err) console.error(err); });
+
+document.getElementById('copyBtn').addEventListener('click', async ()=>{
+  try{
+    await navigator.clipboard.writeText(PIX_CODE);
+    document.getElementById('successBanner').style.display = "block";
+    setTimeout(()=> document.getElementById('successBanner').style.display="none", 3000);
+  }catch(e){ alert("Não foi possível copiar. Copie manualmente."); }
+});
+
+document.getElementById('paidBtn').addEventListener('click', ()=>{
+  window.open("https://wa.me/5511962833961?text=Oi%2C%20paguei%20o%20plano%20Vitalício%20(R$59,90).%20Segue%20o%20comprovante.", "_blank");
+});
+</script>
+</body>
+</html>
