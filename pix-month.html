@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Pagamento - Mensal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-
+  <title>🔥 Pagamento - Plano Mensal</title>
   <style>
-    :root {--pink1:#ff0080;--pink2:#ff5aa6;--blue1:#0077ff;--blue2:#33a1ff;--bg:#0c0c0c;--white:#fff;--muted:#bbb;}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:var(--white);text-align:center;padding-bottom:40px}
-    header{background:linear-gradient(90deg,var(--pink1),var(--pink2));padding:14px;font-weight:800;color:#111;box-shadow:0 8px 30px rgba(255,0,128,.2)}
-    main{max-width:600px;margin:30px auto;background:#111;padding:24px;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.8)}
-    h1{font-size:22px;margin:0 0 10px;color:var(--pink2)}
-    p{margin:6px 0;color:var(--muted)}
-    .price{font-size:28px;font-weight:900;margin:10px 0;color:var(--white)}
-    .pix-box{margin:20px 0;background:#222;padding:14px;border-radius:10px;word-break:break-all}
-    .copy-btn{background:linear-gradient(90deg,var(--blue1),var(--blue2));border:none;color:#fff;font-weight:700;padding:12px 16px;border-radius:10px;cursor:pointer;transition:.3s;margin-top:10px}
-    .copy-btn:hover{transform:scale(1.05)}
-    .qrcode{margin:20px auto;width:180px;height:180px;background:#333 url('qrcode-month.png') center/cover no-repeat;border-radius:12px}
-    .whatsapp-btn{display:block;margin:18px auto 0;background:linear-gradient(90deg,#25d366,#128c7e);color:#fff;padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none;max-width:280px}
-    footer{margin-top:20px;font-size:13px;color:var(--muted)}
+    body{font-family:Arial,Helvetica,sans-serif;background:#000;color:#fff;text-align:center;padding:30px}
+    .box{max-width:480px;margin:0 auto;background:#111;padding:24px;border-radius:12px;box-shadow:0 0 30px rgba(255,0,128,0.3)}
+    h1{color:#ff5aa6}
+    .price{font-size:26px;font-weight:bold;margin:10px 0;color:#0f0}
+    .pix{word-wrap:break-word;background:#222;padding:14px;border-radius:8px;margin:14px 0;font-size:14px}
+    button{background:linear-gradient(90deg,#ff0080,#ff5aa6);border:0;padding:14px 20px;color:#111;font-weight:bold;border-radius:8px;cursor:pointer;font-size:16px}
+    button:hover{transform:scale(1.05)}
+    img.qr{margin:15px auto;max-width:200px;border:4px solid #ff5aa6;border-radius:12px}
+    .trust{margin-top:20px;font-size:14px;color:#bbb}
+    .trust span{display:block;margin:4px 0}
   </style>
 </head>
 <body>
-  <header>Pagamento Seguro • Maria Eduarda</header>
-  <main>
-    <h1>Plano Mensal</h1>
+  <div class="box">
+    <h1>💖 Assinatura Mensal</h1>
     <div class="price">R$ 16,90</div>
-    <p>Acesso completo por 30 dias: fotos inéditas, vídeos exclusivos e mensagens privadas.</p>
-    <div class="pix-box" id="pixKey">chavepix@exemplo.com</div>
-    <button class="copy-btn" onclick="copyPix()">📋 Copiar chave PIX</button>
-    <div class="qrcode"></div>
-    <a class="whatsapp-btn" href="https://wa.me/5511962833961?text=Oi%2C%20já%20paguei%20o%20plano%20Mensal%20R$16,90%2C%20confirmar%20meu%20acesso" target="_blank">✅ Já paguei — Confirmar acesso</a>
-  </main>
-  <footer>⚡ Confirmação automática em até 30 minutos após o pagamento.</footer>
-  <script>
-    function copyPix(){const pix=document.getElementById("pixKey").innerText;navigator.clipboard.writeText(pix).then(()=>{alert("Chave PIX copiada!");});}
-  </script>
+    <p>🔥 Pague agora e libere acesso <b>imediato</b> ao conteúdo VIP 😍</p>
+
+    <img src="qrcode-mensal.png" alt="QR Code Pix" class="qr">
+
+    <p>Ou copie a chave Pix abaixo 👇</p>
+    <div class="pix">6eaff2b1-ae8e-4327-acea-d435fcecfe72</div>
+    <button onclick="navigator.clipboard.writeText('6eaff2b1-ae8e-4327-acea-d435fcecfe72');alert('Chave PIX copiada!')">📋 Copiar chave Pix</button>
+
+    <p style="margin-top:20px">⚡ Após o pagamento clique aqui:</p>
+    <a href="https://wa.me/5511962833961?text=Oi%2C%20acabei%20de%20pagar%20o%20plano%20Mensal!"><button>✅ Confirmar no WhatsApp</button></a>
+
+    <div class="trust">
+      <span>🔒 Pagamento 100% Seguro</span>
+      <span>📲 Pix instantâneo</span>
+      <span>💎 Acesso exclusivo liberado na hora</span>
+    </div>
+  </div>
 </body>
 </html>
