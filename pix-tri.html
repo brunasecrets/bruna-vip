@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pagamento - Trimestral</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {--pink1:#ff0080;--pink2:#ff5aa6;--blue1:#0077ff;--blue2:#33a1ff;--bg:#0c0c0c;--white:#fff;--muted:#bbb;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:var(--white);text-align:center;padding-bottom:40px}
+    header{background:linear-gradient(90deg,var(--pink1),var(--pink2));padding:14px;font-weight:800;color:#111;box-shadow:0 8px 30px rgba(255,0,128,.2)}
+    main{max-width:600px;margin:30px auto;background:#111;padding:24px;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.8)}
+    h1{font-size:22px;margin:0 0 10px;color:var(--pink2)}
+    p{margin:6px 0;color:var(--muted)}
+    .price{font-size:28px;font-weight:900;margin:10px 0;color:var(--white)}
+    .pix-box{margin:20px 0;background:#222;padding:14px;border-radius:10px;word-break:break-all}
+    .copy-btn{background:linear-gradient(90deg,var(--blue1),var(--blue2));border:none;color:#fff;font-weight:700;padding:12px 16px;border-radius:10px;cursor:pointer;transition:.3s;margin-top:10px}
+    .copy-btn:hover{transform:scale(1.05)}
+    .qrcode{margin:20px auto;width:180px;height:180px;background:#333 url('qrcode-tri.png') center/cover no-repeat;border-radius:12px}
+    .whatsapp-btn{display:block;margin:18px auto 0;background:linear-gradient(90deg,#25d366,#128c7e);color:#fff;padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none;max-width:280px}
+    footer{margin-top:20px;font-size:13px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>Pagamento Seguro • Maria Eduarda</header>
+  <main>
+    <h1>Plano Trimestral</h1>
+    <div class="price">R$ 33,01</div>
+    <p>Acesso completo por 90 dias: fotos, vídeos e prioridade nas respostas.</p>
+    <div class="pix-box" id="pixKey">chavepix@exemplo.com</div>
+    <button class="copy-btn" onclick="copyPix()">📋 Copiar chave PIX</button>
+    <div class="qrcode"></div>
+    <a class="whatsapp-btn" href="https://wa.me/5511962833961?text=Oi%2C%20já%20paguei%20o%20plano%20Trimestral%20R$33,01%2C%20confirmar%20meu%20acesso" target="_blank">✅ Já paguei — Confirmar acesso</a>
+  </main>
+  <footer>⚡ Confirmação automática em até 30 minutos após o pagamento.</footer>
+  <script>
+    function copyPix(){const pix=document.getElementById("pixKey").innerText;navigator.clipboard.writeText(pix).then(()=>{alert("Chave PIX copiada!");});}
+  </script>
+</body>
+</html>
