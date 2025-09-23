@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Maria Eduarda</title>
 
-  <!-- Fonte bonita -->
+  <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
@@ -39,10 +39,7 @@
       box-shadow:0 8px 30px rgba(255,0,128,0.2);
       animation: pulseBar 3s infinite;
     }
-    @keyframes pulseBar {
-      0%,100%{opacity:1}
-      50%{opacity:0.7}
-    }
+    @keyframes pulseBar {0%,100%{opacity:1}50%{opacity:0.7}}
 
     header{padding:36px 16px 8px;}
     .profile-wrap{max-width:980px;margin:0 auto}
@@ -57,13 +54,13 @@
     .profile-pic:hover{transform:translateY(-6px) scale(1.05);box-shadow:0 30px 90px rgba(255,0,128,0.4)}
 
     main{max-width:980px;margin:18px auto;padding:0 18px}
-    h1{color:var(--white);margin:14px 0 6px;font-size:34px;font-weight:800;height:40px} 
+    h1{color:var(--white);margin:14px 0 6px;font-size:34px;font-weight:800} 
     .subtitle{color:var(--muted);margin-bottom:14px;font-size:16px}
 
     /* stats */
-    .stats{display:flex;gap:8px;justify-content:center;margin:12px 0 16px;padding:6px;flex-wrap:nowrap;overflow-x:auto}
-    .stat{min-width:80px;padding:6px;font-size:13px;color:var(--muted);display:flex;flex-direction:column;align-items:center}
-    .stat .num{color:var(--white);font-weight:900;font-size:18px;margin-bottom:2px}
+    .stats{display:flex;gap:10px;justify-content:center;margin:12px 0 16px;padding:6px;flex-wrap:nowrap;overflow-x:auto}
+    .stat{min-width:80px;padding:8px 10px;font-size:13px;color:var(--muted);display:flex;flex-direction:column;align-items:center}
+    .stat .num{color:var(--white);font-weight:900;font-size:20px;margin-bottom:4px}
 
     /* botões */
     .buttons{display:flex;gap:12px;justify-content:center;margin:18px 0;flex-wrap:wrap}
@@ -94,20 +91,24 @@
     .feature{background:#0c0c0c;padding:14px;border-radius:10px;min-width:180px;flex:1;color:var(--muted);transition:.3s}
     .feature:hover{transform:scale(1.05);box-shadow:0 0 15px rgba(255,0,128,0.3)}
 
-    /* feedback estilo WhatsApp */
+    /* feedback */
     .feedback{max-width:900px;margin:28px auto;text-align:left}
     .testi{background:#0b0b0b;padding:14px;border-radius:10px;margin-bottom:12px;color:#eee;animation:fadeIn 1s ease}
     .testi strong{color:#0f0}
 
     footer{margin-top:36px;color:#8f8f8f;font-size:13px}
 
+    /* contador */
+    .countdown{margin:18px auto;font-size:18px;font-weight:800;color:var(--pink2)}
+    .scarcity{margin-top:10px;color:#ff5aa6;font-size:15px;font-weight:700}
+    
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
     @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
   </style>
 </head>
 <body>
 
-  <div class="topbar">🔥 12 pessoas compraram nas últimas horas!</div>
+  <div class="topbar">🔥 17 pessoas compraram nas últimas horas! Últimas vagas abertas!</div>
 
   <header>
     <div class="profile-wrap">
@@ -116,8 +117,8 @@
   </header>
 
   <main>
-    <h1>Maria Eduarda</h1>
-    <p class="subtitle">✨ Conteúdo privado, mensagens diretas e conteúdo diário — só pra assinantes ✨</p>
+    <h1>Maria Eduarda VIP</h1>
+    <p class="subtitle">✨ Conteúdo proibido, mensagens privadas e atenção TOTAL só para quem é VIP ✨</p>
 
     <div class="stats">
       <div class="stat"><div class="num">107</div><div class="label">Posts</div></div>
@@ -127,45 +128,49 @@
     </div>
 
     <div class="buttons">
-      <a id="mimoBtn" class="btn btn-pink btn-wide" href="https://wa.me/5511962833961?text=Oi%2C%20quero%20enviar%20um%20mimo" target="_blank" rel="noopener">🎁 Enviar mimo</a>
-      <a class="btn btn-ghost" href="https://wa.me/5511962833961?text=Oi%2C%20preciso%20de%20ajuda" target="_blank" rel="noopener">💬 Suporte</a>
+      <a class="btn btn-pink btn-wide" href="https://wa.me/5511962833961" target="_blank" rel="noopener">🎁 Quero dar um presente</a>
+      <a class="btn btn-ghost" href="https://wa.me/5511962833961?text=Oi%2C%20preciso%20de%20ajuda" target="_blank" rel="noopener">💬 Suporte VIP</a>
     </div>
 
     <!-- Planos -->
     <div class="offer">
       <div class="offer-box">
         <div class="offer-left">
-          <h2>💖 Escolha seu plano</h2>
-          <p class="lead">No meu VIP você terá acesso a fotos e vídeos proibidos 🔞, vai falar direto comigo 💌 e ainda terá surpresas semanais.</p>
+          <h2>💖 Escolha seu plano e entre AGORA no VIP</h2>
+          <p class="lead">Assine agora e receba acesso imediato a conteúdos secretos 🔥, vídeos proibidos 🔞 e conversas privadas comigo 💌.</p>
 
           <div class="plan">
             <div class="title">Mensal</div>
             <div class="price">R$16,90</div>
-            <div class="desc">Acesso completo por 30 dias: fotos inéditas, vídeos exclusivos, mensagens privadas e prioridade nas respostas.</div>
-            <a class="pay-blue" href="pix-month.html">Pagar Mensal — R$16,90</a>
+            <div class="desc">Acesso VIP por 30 dias 📅<br>Receba conteúdos novos toda semana + fale comigo direto pelo WhatsApp 😈</div>
+            <a class="pay-blue" href="pix-month.html">👉 Quero o Mensal</a>
           </div>
 
           <div class="plan">
             <div class="title">Trimestral</div>
             <div class="price">R$33,01</div>
-            <div class="desc">3 meses de acesso completo com desconto especial. Conteúdos novos toda semana e prioridade VIP.</div>
-            <a class="pay-blue" href="pix-tri.html">Pagar Trimestral — R$33,01</a>
+            <div class="desc">3 meses de acesso completo 🔥<br>Mais barato que o mensal, perfeito pra quem não quer ficar de fora 😏</div>
+            <a class="pay-blue" href="pix-trimester.html">👉 Quero o Trimestral</a>
           </div>
 
           <div class="plan">
             <div class="title">Vitalício</div>
-            <div class="price">R$64,90</div>
-            <div class="desc">Acesso para sempre + prioridade VIP nas mensagens e destaque nos conteúdos — pra quem quer a parada completa.</div>
-            <a class="pay-blue" href="pix-lifetime.html">Pagar Vitalício — R$64,90</a>
+            <div class="price">R$69,90</div>
+            <div class="desc">Acesso eterno ♾️<br>Nunca mais paga nada e ainda ganha prioridade máxima nas respostas 💎</div>
+            <a class="pay-blue" href="pix-lifetime.html">🔥 Quero o Vitalício</a>
           </div>
+
+          <!-- contador e escassez -->
+          <div class="countdown" id="countdown"></div>
+          <div class="scarcity">🚨 Apenas <span id="spots">8</span> vagas VIP restantes hoje!</div>
         </div>
       </div>
     </div>
 
     <div class="features">
-      <div class="feature">📸 Conteúdo novo toda semana</div>
-      <div class="feature">🎥 Vídeos privados</div>
-      <div class="feature">🔒 Privacidade e SEGREDO</div>
+      <div class="feature">📸 Conteúdo proibido toda semana</div>
+      <div class="feature">🎥 Vídeos só para assinantes</div>
+      <div class="feature">💌 Atenção direta e prioridade</div>
     </div>
 
     <section class="feedback">
@@ -173,12 +178,43 @@
       <div class="testi"><strong>✔✔ João - Ontem 22:10</strong><div>"Maria, tu é surreal, vale cada centavo 🔥"</div></div>
       <div class="testi"><strong>✔✔ Lucas - Hoje 09:15</strong><div>"Melhor site que já assinei, respondes rápido demais 😍"</div></div>
       <div class="testi"><strong>✔✔ Pedro - Hoje 14:30</strong><div>"Fiquei viciado no teu VIP, não largo mais 💖"</div></div>
-      <div class="testi"><strong>✔✔ Rafa - Hoje 17:40</strong><div>"Os vídeos são pesados demais 🔥🔥 fiquei doido, nunca vi nada igual 😈"</div></div>
+      <div class="testi"><strong>✔✔ André - Hoje 20:00</strong><div>"Tô arrepiado com os vídeos novos 😈🔥"</div></div>
     </section>
   </main>
 
   <footer>
     ©️ 2025 Maria Eduarda VIP — Todos os direitos reservados
   </footer>
+
+  <script>
+    // Contador regressivo
+    function startCountdown(hours) {
+      let endTime = new Date().getTime() + hours*60*60*1000;
+      function update() {
+        let now = new Date().getTime();
+        let dist = endTime - now;
+        if (dist <= 0) {
+          document.getElementById("countdown").innerText = "⏳ Oferta expirada!";
+          return;
+        }
+        let h = Math.floor(dist/(1000*60*60));
+        let m = Math.floor((dist%(1000*60*60))/(1000*60));
+        let s = Math.floor((dist%(1000*60))/1000);
+        document.getElementById("countdown").innerText =
+          "⏰ Promoção acaba em: " + h + "h " + m + "m " + s + "s";
+      }
+      setInterval(update,1000); update();
+    }
+    startCountdown(5);
+
+    // Vagas aleatórias
+    let spots = 8;
+    setInterval(()=>{
+      if(spots>3 && Math.random()<0.3){
+        spots--;
+        document.getElementById("spots").innerText = spots;
+      }
+    },7000);
+  </script>
 </body>
 </html>
