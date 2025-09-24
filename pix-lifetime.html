@@ -5,45 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pagamento - Plano Vitalício</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', Arial, sans-serif;
-      background: #000;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-    h1 { color: #ff5aa6; }
-    .box {
-      background: #fff;
-      color: #000;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 500px;
-      margin: 20px auto;
-      text-align: left;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-    .pix-key {
-      background: #f5f5f5;
-      padding: 12px;
-      border-radius: 8px;
-      font-weight: bold;
-      word-break: break-all;
-      margin: 10px 0;
-    }
-    .highlight { color: #ff0080; font-weight: bold; }
-    .btn {
-      display: inline-block;
-      background: linear-gradient(90deg,#ff0080,#ff5aa6);
-      color: #fff;
-      padding: 12px 20px;
-      border-radius: 8px;
-      margin-top: 15px;
-      text-decoration: none;
-      font-weight: 700;
-    }
+    body {margin:0;font-family:'Poppins',Arial,sans-serif;background:#000;color:#fff;text-align:center;padding:20px}
+    h1{color:#ff5aa6}
+    .box{background:#111;border:3px solid #ff0080;color:#fff;padding:20px;border-radius:12px;max-width:480px;margin:20px auto;text-align:center;font-size:15px;line-height:1.6;box-shadow:0 0 25px rgba(255,0,128,0.5)}
+    .highlight{color:#ff5aa6;font-weight:bold}
+    .pix-key{background:#222;padding:12px;border-radius:8px;margin:12px 0;font-weight:700;word-break:break-all}
+    button.copy-btn{background:linear-gradient(90deg,#ff0080,#ff5aa6);color:#111;border:none;padding:10px 16px;border-radius:8px;font-weight:bold;cursor:pointer;margin-top:6px;transition:.3s}
+    button.copy-btn:hover{transform:scale(1.05)}
+    .btn{display:inline-block;background:linear-gradient(90deg,#0077ff,#33a1ff);color:#fff;padding:12px 20px;border-radius:8px;margin-top:18px;text-decoration:none;font-weight:700;transition:.3s}
+    .btn:hover{box-shadow:0 0 15px #33a1ff}
   </style>
 </head>
 <body>
@@ -51,16 +21,22 @@
   <p>Valor: <span class="highlight">R$69,90</span></p>
 
   <div class="box">
-    <p>Para efetuar seu pagamento via <span class="highlight">PIX</span>, siga os passos:</p>
-    <ol>
-      <li>Copie a chave PIX abaixo:</li>
-      <div class="pix-key">6eaff2b1-ae8e-4327-acea-d435fcecfe72</div>
-      <li>No app do seu banco, escolha <b>PIX → Copia e Cola</b>.</li>
-      <li>Cole a chave, confirme o valor <b>R$69,90</b> e finalize.</li>
-      <li>Depois clique no botão abaixo para enviar o comprovante no WhatsApp ✅</li>
-    </ol>
+    <p>Siga as instruções abaixo para efetuar seu pagamento via <span class="highlight">PIX</span>:</p>
+    <div class="pix-key" id="pixKey">6eaff2b1-ae8e-4327-acea-d435fcecfe72</div>
+    <button class="copy-btn" onclick="copyPix()">📋 Copiar chave PIX</button>
+    <p>Abra o app do seu banco, escolha <b>PIX → Copia e Cola</b>, cole a chave e confirme o valor <b>R$69,90</b>.</p>
+    <p>Depois clique no botão abaixo e envie seu comprovante no WhatsApp ✅</p>
   </div>
 
   <a class="btn" href="https://wa.me/5511962833961?text=Oi%2C%20paguei%20o%20plano%20Vital%C3%ADcio%20(R$69,90)%20e%20segue%20meu%20comprovante.">📲 Efetuar Pagamento</a>
+
+  <script>
+    function copyPix(){
+      let pix=document.getElementById("pixKey").innerText;
+      navigator.clipboard.writeText(pix).then(()=>{
+        alert("✅ Chave PIX copiada!");
+      });
+    }
+  </script>
 </body>
 </html>
