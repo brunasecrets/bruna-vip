@@ -1,9 +1,9 @@
-// Depoimentos fake estilo WhatsApp
+// Depoimentos rotativos
 const depoimentos = [
-  "🔥 Mano, não me arrependo, conteúdo surreal!",
-  "👀 Melhor R$16,90 investido esse mês kkk",
-  "🤯 As prévias não chegam nem perto do que tem no VIP",
-  "💦 Tô viciado nesse grupo, só coisa pesada!"
+  "🔥 Conteúdo surreal, não esperava tanto!",
+  "👀 Melhor R$16,90 investido esse mês",
+  "🤯 As prévias não chegam nem perto do VIP",
+  "💦 Tô viciado, vale cada centavo"
 ];
 let i=0;
 function trocarDepoimento(){
