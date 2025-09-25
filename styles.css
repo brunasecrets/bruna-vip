@@ -1,0 +1,133 @@
+/* ---------- Variáveis ---------- */
+:root {
+  --roxo: #6b3fa6;
+  --roxo-claro: #8f5fd1;
+  --branco: #ffffff;
+  --cinza: #f4f4f4;
+  --sombra: rgba(0,0,0,0.15);
+  --gradiente: linear-gradient(135deg, #6b3fa6, #8f5fd1);
+}
+
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--gradiente);
+  color: var(--branco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* ---------- Container ---------- */
+.container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+/* ---------- Hero ---------- */
+.hero h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.tagline {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--cinza);
+  margin-bottom: 25px;
+}
+
+/* ---------- Card ---------- */
+.card {
+  background: var(--branco);
+  border-radius: 22px;
+  padding: 30px 20px;
+  box-shadow: 0 6px 18px var(--sombra);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 14px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px var(--sombra);
+}
+
+/* VIP destaque */
+.btn-vip {
+  background: #2ca5e0;
+  color: var(--branco);
+}
+.btn-vip:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(44,165,224,0.4);
+}
+
+/* Site oficial */
+.btn-site {
+  background: var(--branco);
+  color: var(--roxo);
+  border: 2px solid var(--roxo);
+}
+.btn-site:hover {
+  background: var(--roxo-claro);
+  color: var(--branco);
+}
+
+/* Grátis */
+.btn-free {
+  background: rgba(44,165,224,0.15);
+  color: #2ca5e0;
+}
+.btn-free:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(44,165,224,0.3);
+}
+
+/* Extra copy */
+.extra-copy {
+  margin: 20px 0;
+}
+.extra-copy p {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+/* Rodapé */
+footer {
+  margin-top: 25px;
+  font-size: 0.75rem;
+  color: var(--cinza);
+}
+
+/* ---------- Animações ---------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
