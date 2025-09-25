@@ -1,19 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Pagamento PIX • Maria Eduarda VIP</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pagamento PIX • Maria Eduarda VIP</title>
+  <style>
+    :root{
+      --bg:#000;
+      --card:#111;
+      --pink1:#c437ff;
+      --pink2:#ff79e6;
+      --accent:#7ad0ff;
+      --muted:#bdbfc3;
+      --white:#ffffff;
+      --radius:14px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:var(--bg);
+      color:var(--white);
+      padding:20px;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      top:0;left:0;right:0;height:280px;
+      background:radial-gradient(circle at top center, rgba(196,55,255,.35), transparent 70%);
+      z-index:-1;
+    }
+    .container{max-width:720px;margin:auto}
+    .card{
+      background:var(--card);
+      padding:24px;
+      border-radius:var(--radius);
+      box-shadow:0 12px 40px rgba(0,0,0,.6);
+    }
+    header{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+    .logo{
+      width:58px;height:58px;border-radius:12px;
+      background:linear-gradient(135deg,var(--pink1),var(--pink2));
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;color:#111;font-size:18px;
+    }
+    h1{margin:0;font-size:20px;color:var(--pink2)}
+    .lead{color:var(--muted);font-size:14px;margin-top:4px}
+    .alert{
+      background:#1a1a1a;border:1px solid #333;
+      padding:12px;border-radius:10px;margin-top:12px;
+      color:#ffb3d9;font-size:14px;text-align:center;
+    }
+    .panel{
+      background:#0b0b0b;padding:16px;border-radius:12px;margin-top:16px;
+    }
+    .label{color:#9aa0a6;font-size:13px;margin-bottom:6px}
+    .pix-text{
+      background:#000;padding:10px;border-radius:8px;
+      font-weight:700;font-size:14px;word-break:break-all
+    }
+    .controls{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:6px;
+      background:linear-gradient(90deg,var(--pink1),var(--pink2));
+      color:#111;border:0;padding:10px 14px;
+      border-radius:10px;font-weight:800;cursor:pointer;
+      text-decoration:none;
+      transition:.25s;
+    }
+    .btn:hover{transform:translateY(-3px);}
+    .btn.ghost{
+      background:transparent;
+      border:1px solid rgba(255,255,255,.2);
+      color:var(--muted);
+    }
+    #qrcode canvas{
+      max-width:100%;background:#fff;
+      border-radius:10px;padding:8px;margin-top:18px
+    }
+    .success{
+      background:linear-gradient(90deg,#0ee9a7,#0ecf7a);
+      color:#011;padding:10px;border-radius:10px;
+      font-weight:800;margin-top:10px;
+      display:none;text-align:center
+    }
+  </style>
 </head>
 <body>
 <div class="container">
   <div class="card">
-    <header class="pay-header">
+    <header>
       <div class="logo">VIP</div>
       <div>
-        <h1>Pague com PIX — Maria Eduarda VIP</h1>
-        <p class="lead">Plano 1 mês — <b>R$16,90</b>. Após pagar, clique em <b>Efetuei pagamento</b> e envie o comprovante no WhatsApp.</p>
+        <h1>Pagamento PIX — Maria Eduarda VIP</h1>
+        <p class="lead">Plano mensal <b>R$16,90</b>. Após pagar, clique em "Efetuei pagamento" e envie o comprovante no WhatsApp.</p>
       </div>
     </header>
 
@@ -32,7 +111,7 @@
       <div class="success" id="successBanner">✔ PIX copiado — cole no app do banco!</div>
     </div>
 
-    <div style="margin-top:20px;text-align:center" id="qrcode"></div>
+    <div style="text-align:center" id="qrcode"></div>
   </div>
 </div>
 
@@ -51,7 +130,7 @@ document.getElementById('copyBtn').addEventListener('click', async ()=>{
 });
 
 document.getElementById('paidBtn').addEventListener('click', ()=>{
-  window.open("https://wa.me/5511962833961?text=Oi%2C%20paguei%20o%20plano%20de%201%20mês%20(R$16,90).%20Segue%20o%20comprovante.", "_blank");
+  window.open("https://wa.me/5511962833961?text=Oi%2C%20paguei%20o%20plano%20VIP%20(R$16,90).%20Segue%20o%20comprovante.", "_blank");
 });
 </script>
 </body>
