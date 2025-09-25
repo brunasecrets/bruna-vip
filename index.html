@@ -1,177 +1,289 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Maria Eduarda VIP</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maria Eduarda VIP 💖</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#000;
-      --card:#111;
-      --pink1:#c437ff;
-      --pink2:#ff79e6;
-      --accent:#7ad0ff;
-      --muted:#bdbfc3;
-      --white:#ffffff;
-      --glass: rgba(255,255,255,0.04);
-      --radius:14px;
+      --black: #000000;
+      --card: #060606;
+      --pink1: #ff0080;
+      --pink2: #ff5aa6;
+      --blue1: #0077ff;
+      --blue2: #33a1ff;
+      --muted: #bdbfc3;
+      --white: #ffffff;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
+    body {
+      margin:0;
       font-family:'Poppins',sans-serif;
-      background:var(--bg);
+      background:var(--black);
       color:var(--white);
-      min-height:100vh;
+      text-align:center;
+      padding-bottom:48px;
     }
-    body::before{
-      content:"";
-      position:fixed;
-      top:0;left:0;right:0;height:280px;
-      background:radial-gradient(circle at top center, rgba(196,55,255,.35), transparent 70%);
-      z-index:-1;
+    a {
+      color:inherit;
+      text-decoration:none; /* remove underline */
     }
-    .topbar{
+
+    .topbar {
       background:linear-gradient(90deg,var(--pink1),var(--pink2));
       color:#111;
-      padding:10px 14px;
-      text-align:center;
+      padding:8px;
       font-weight:700;
       font-size:14px;
+      box-shadow:0 8px 30px rgba(255,0,128,0.2)
     }
-    .hero{text-align:center;padding:36px 14px 10px;}
-    .profile-pic{
-      width:150px;height:150px;
+
+    header {
+      padding:36px 16px 8px;
+    }
+    .profile-pic {
+      width:170px;
+      height:170px;
       border-radius:50%;
+      display:block;
+      margin:0 auto;
       border:6px solid var(--pink1);
-      object-fit:cover;
-      margin:0 auto 16px;
-      box-shadow:0 20px 60px rgba(196,55,255,0.25);
+      box-shadow:0 20px 60px rgba(255,0,128,0.25);
+      background-size:cover;
+      background-position:center;
     }
-    .site-title{font-size:32px;font-weight:800;margin-bottom:6px;}
-    .subtitle{color:var(--muted);font-size:15px;}
-    .stats{display:flex;justify-content:center;gap:18px;margin:18px 0;flex-wrap:wrap;}
-    .stat{text-align:center;min-width:80px;}
-    .stat .num{font-size:20px;font-weight:900;color:var(--white);}
-    .stat .label{font-size:13px;color:var(--muted);}
-    .buttons{display:flex;gap:12px;justify-content:center;margin-bottom:24px;flex-wrap:wrap;}
-    .btn{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:12px 18px;border-radius:12px;
-      font-weight:700;cursor:pointer;border:0;transition:.25s;
+
+    h1 {
+      color:var(--white);
+      margin:14px 0 6px;
+      font-size:34px;
+      font-weight:800;
     }
-    .btn-primary{
+    .subtitle {
+      color:var(--muted);
+      margin-bottom:14px;
+      font-size:16px;
+    }
+
+    .stats {
+      display:flex;
+      gap:18px;
+      justify-content:center;
+      margin:12px 0 16px;
+    }
+    .stat .num {
+      color:var(--white);
+      font-weight:900;
+      font-size:20px;
+    }
+
+    .buttons {
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      margin:18px 0;
+      flex-wrap:wrap;
+    }
+    .btn {
+      padding:12px 16px;
+      border-radius:10px;
+      font-weight:700;
+      cursor:pointer;
+      border:0;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      transition:.3s;
+    }
+    .btn-pink {
       background:linear-gradient(90deg,var(--pink1),var(--pink2));
-      color:#111;box-shadow:0 12px 36px rgba(196,55,255,0.25);
+      color:#111;
+      box-shadow:0 12px 36px rgba(255,0,128,0.3);
     }
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.15);color:var(--muted);}
-    .btn-support{background:linear-gradient(90deg,#444,#2a2a2a);color:#fff;}
-    .btn:hover{transform:translateY(-4px);}
-    .section-card{
-      max-width:920px;margin:20px auto;padding:20px;
-      border-radius:var(--radius);background:var(--card);
-      box-shadow:0 12px 40px rgba(0,0,0,.6);
+    .btn-ghost {
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.2);
+      color:var(--muted);
     }
-    .section-title{text-align:center;margin-bottom:18px;font-size:20px;font-weight:800;}
-    .preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-    .preview-card{position:relative;border-radius:12px;overflow:hidden;}
-    .preview-card img{width:100%;height:180px;object-fit:cover;display:block;}
-    .preview-meta{
-      position:absolute;left:10px;bottom:10px;
-      background:rgba(0,0,0,0.65);padding:6px 10px;
-      border-radius:8px;font-size:13px;font-weight:700;
+    .btn-wide {
+      min-width:220px;
     }
-    .benefits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
-    .benefit{
-      background:var(--glass);padding:16px;border-radius:12px;
-      font-weight:700;display:flex;align-items:center;gap:10px;
-      transition:.25s;
+
+    .offer {
+      margin:20px auto;
+      max-width:900px;
+      padding:0 6px;
     }
-    .benefit:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(196,55,255,.25);}
-    .testi{background:#0b0b0b;padding:12px 14px;border-radius:12px;margin-bottom:10px;font-size:14px;}
-    .testi strong{color:#9ef2c7;font-size:13px;}
-    .final-box{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
-    .final-price{font-size:22px;font-weight:900;}
-    .btn-pay{
-      background:linear-gradient(90deg,var(--accent),#3ec0ff);
-      color:#011;font-weight:900;
-      padding:12px 16px;border-radius:10px;
+    .offer-box {
+      background:var(--card);
+      padding:24px;
+      border-radius:14px;
+      box-shadow:0 20px 60px rgba(0,0,0,0.8);
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+      justify-content:center;
     }
-    .site-footer{text-align:center;padding:20px 10px;color:var(--muted);font-size:13px;}
-    .subscribe-fixed{
-      position:fixed;left:14px;right:14px;bottom:16px;
+    .plan {
+      background:#020202;
+      padding:18px;
+      border-radius:12px;
+      margin-bottom:14px;
+      min-width:200px;
+    }
+    .plan .title {
+      font-weight:900;
+      color:var(--pink2);
+    }
+    .plan .price {
+      font-weight:900;
+      font-size:20px;
+      color:var(--white);
+      margin:6px 0 12px;
+    }
+    .pay-blue {
+      background:linear-gradient(90deg,var(--blue1),var(--blue2));
+      color:#fff;
+      padding:12px 14px;
+      border-radius:10px;
+      font-weight:900;
+      display:inline-block;
+      min-width:200px;
+    }
+
+    /* Prévia vídeos */
+    .previews {
+      margin:30px auto;
+      max-width:900px;
+      padding:0 10px;
+    }
+    .preview-grid {
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .preview-card {
+      flex:1;
+      min-width:240px;
+      max-width:300px;
+      background:#111;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 8px 24px rgba(0,0,0,0.6);
+    }
+    .preview-card img {
+      width:100%;
+      display:block;
+    }
+    .overlay {
+      padding:10px;
+      font-size:14px;
+      text-align:center;
+      background:rgba(0,0,0,0.6);
+    }
+
+    /* Benefícios */
+    .benefits {
+      margin:30px auto;
+      max-width:900px;
+      padding:0 10px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:14px;
+    }
+    .benefit-card {
+      background:var(--card);
+      padding:18px;
+      border-radius:12px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.6);
+      font-size:14px;
+      text-align:center;
+    }
+
+    /* Footer */
+    .site-footer {
+      text-align:center;
+      padding:18px 6px;
+      color:rgba(255,255,255,0.78);
+      font-size:13px;
+      margin-top:30px;
+    }
+
+    /* Botão fixo mobile */
+    .subscribe-fixed {
+      position:fixed;
+      left:12px;
+      right:12px;
+      bottom:18px;
+      z-index:999;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       background:linear-gradient(90deg,var(--pink1),var(--pink2));
-      color:#111;font-weight:900;padding:14px;border-radius:999px;
-      text-align:center;z-index:999;
-      box-shadow:0 20px 50px rgba(196,55,255,.3);
+      color:#111;
+      padding:14px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:800;
+      box-shadow:0 12px 32px rgba(255,0,128,0.25);
     }
-    @media(min-width:900px){
-      .subscribe-fixed{max-width:420px;right:24px;left:auto}
-    }
+    @media(min-width:900px){ .subscribe-fixed{display:none} }
   </style>
 </head>
 <body>
-  <div class="topbar">✨ Bem-vindo ao acesso VIP exclusivo ✨</div>
+  <div class="topbar">🔥 12 pessoas compraram nas últimas horas!</div>
 
-  <section class="hero">
-    <img src="sua-foto.jpg" alt="Maria Eduarda" class="profile-pic"/>
-    <h1 class="site-title">Maria Eduarda</h1>
-    <p class="subtitle">Conteúdo exclusivo e privado 🔒</p>
+  <header>
+    <img src="img/perfil.jpg" alt="Foto de perfil" class="profile-pic">
+  </header>
+
+  <main>
+    <h1>Maria Eduarda</h1>
+    <p class="subtitle">✨ Conteúdo privado, mensagens diretas e conteúdo diário — só pra assinantes ✨</p>
+
     <div class="stats">
-      <div class="stat"><span class="num">12.4k</span><div class="label">Seguidores</div></div>
-      <div class="stat"><span class="num">580</span><div class="label">Posts</div></div>
-      <div class="stat"><span class="num">32k</span><div class="label">Curtidas</div></div>
-      <div class="stat"><span class="num">140</span><div class="label">Mídias</div></div>
+      <div class="stat"><div class="num">107</div><div class="label">Posts</div></div>
+      <div class="stat"><div class="num">723</div><div class="label">Seguidores</div></div>
+      <div class="stat"><div class="num">401</div><div class="label">Curtidas</div></div>
+      <div class="stat"><div class="num">128</div><div class="label">Mídia</div></div>
     </div>
+
     <div class="buttons">
-      <a href="#vip" class="btn btn-primary">💎 Assinar VIP Agora</a>
-      <a href="#previas" class="btn btn-ghost">🎥 Ver Prévia</a>
-      <a href="https://t.me/dudamariax" target="_blank" class="btn btn-support">🔗 Grupo Grátis</a>
+      <a class="btn btn-pink btn-wide" href="pix.html">🔥 Assinar VIP R$16,90</a>
+      <a class="btn btn-ghost" href="https://wa.me/5511962833961?text=Oi%2C%20preciso%20de%20suporte%20VIP" target="_blank">💬 Suporte VIP</a>
     </div>
-  </section>
 
-  <section id="previas" class="section-card">
-    <h2 class="section-title">Prévia Exclusiva</h2>
-    <div class="preview-grid">
-      <div class="preview-card">
-        <img src="previa1.jpg" alt="Prévia 1"/>
-        <div class="preview-meta">🎬 10min32s</div>
+    <!-- Prévia -->
+    <section class="previews">
+      <div class="preview-grid">
+        <div class="preview-card">
+          <img src="img/previa1.jpg" alt="Prévia 1">
+          <div class="overlay">🎬 Vídeo exclusivo • 10:23</div>
+        </div>
+        <div class="preview-card">
+          <img src="img/previa2.jpg" alt="Prévia 2">
+          <div class="overlay">🎬 Vídeo exclusivo • 07:45</div>
+        </div>
       </div>
-      <div class="preview-card">
-        <img src="previa2.jpg" alt="Prévia 2"/>
-        <div class="preview-meta">🎬 7min14s</div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section-card">
-    <h2 class="section-title">O que você recebe no VIP</h2>
-    <div class="benefits-grid">
-      <div class="benefit">✅ Conteúdo exclusivo +18</div>
-      <div class="benefit">✅ Novos vídeos toda semana</div>
-      <div class="benefit">✅ Conversa direta comigo</div>
-      <div class="benefit">✅ Sigilo garantido</div>
-    </div>
-  </section>
-
-  <section class="section-card">
-    <h2 class="section-title">Depoimentos</h2>
-    <div class="testi"><strong>Lucas:</strong> Melhor assinatura que já fiz 🔥</div>
-    <div class="testi"><strong>Rafael:</strong> Conteúdo único e de qualidade.</div>
-    <div class="testi"><strong>João:</strong> Atendimento incrível e exclusivo.</div>
-  </section>
-
-  <section id="vip" class="section-card">
-    <h2 class="section-title">Assine agora</h2>
-    <div class="final-box">
-      <div class="final-price">R$16,90 / mês</div>
-      <a href="pagamento.html" class="btn-pay">Assinar VIP</a>
-    </div>
-  </section>
+    <!-- Benefícios -->
+    <section class="benefits">
+      <div class="benefit-card">✅ Conteúdo exclusivo +18</div>
+      <div class="benefit-card">✅ Novos vídeos toda semana</div>
+      <div class="benefit-card">✅ Conversa direta comigo</div>
+      <div class="benefit-card">✅ Sigilo garantido</div>
+    </section>
+  </main>
 
   <footer class="site-footer">
-    Maria Eduarda © 2025 — Todos os direitos reservados.
+    Maria Eduarda © 2025 — Apenas maiores de 18 anos
   </footer>
 
-  <a href="#vip" class="subscribe-fixed">💎 Assinar VIP Agora</a>
+  <!-- Botão fixo mobile -->
+  <a class="subscribe-fixed" href="pix.html">🔥 Assinar VIP R$16,90</a>
 </body>
 </html>
