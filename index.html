@@ -1,220 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Maria Eduarda</title>
-
-  <!-- Fonte -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --black: #000000;
-      --card: #060606;
-      --pink1: #ff0080;
-      --pink2: #ff5aa6;
-      --blue1: #0077ff;
-      --blue2: #33a1ff;
-      --muted: #bdbfc3;
-      --white: #ffffff;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:'Poppins',Arial,Helvetica,sans-serif;
-      background: var(--black);
-      color:var(--white);
-      text-align:center;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding-bottom:48px;
-    }
-    a{color:inherit;text-decoration:none}
-
-    /* barra no topo */
-    .topbar{
-      background: linear-gradient(90deg,var(--pink1),var(--pink2));
-      color:#111;padding:8px 12px;font-weight:700;font-size:14px;
-      box-shadow:0 8px 30px rgba(255,0,128,0.2);
-      animation: pulseBar 3s infinite;
-    }
-    @keyframes pulseBar {0%,100%{opacity:1}50%{opacity:0.7}}
-
-    header{padding:36px 16px 8px;}
-    .profile-wrap{max-width:980px;margin:0 auto}
-    .profile-pic{
-      width:170px;height:170px;border-radius:50%;display:block;margin:0 auto;
-      border:6px solid var(--pink1);
-      box-shadow: 0 20px 60px rgba(255,0,128,0.25);
-      background-size:cover;background-position:center;
-      transition: transform .35s ease, box-shadow .35s ease;
-      animation: fadeIn 1.5s ease;
-    }
-    .profile-pic:hover{transform:translateY(-6px) scale(1.05);box-shadow:0 30px 90px rgba(255,0,128,0.4)}
-
-    main{max-width:980px;margin:18px auto;padding:0 18px}
-    h1{color:var(--white);margin:14px 0 6px;font-size:34px;font-weight:800} 
-    .subtitle{color:var(--muted);margin-bottom:14px;font-size:16px}
-
-    /* stats */
-    .stats{display:flex;gap:10px;justify-content:center;margin:12px 0 16px;padding:6px;flex-wrap:nowrap;overflow-x:auto}
-    .stat{min-width:80px;padding:8px 10px;font-size:13px;color:var(--muted);display:flex;flex-direction:column;align-items:center}
-    .stat .num{color:var(--white);font-weight:900;font-size:20px;margin-bottom:4px}
-
-    /* botões */
-    .buttons{display:flex;gap:12px;justify-content:center;margin:18px 0;flex-wrap:wrap}
-    .btn{padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer;border:0;display:inline-flex;align-items:center;gap:8px;transition: all .3s ease}
-    .btn:hover{transform:scale(1.05)}
-    .btn-pink{background:linear-gradient(90deg,var(--pink1),var(--pink2));color:#111;box-shadow:0 12px 36px rgba(255,0,128,0.3)}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.2);color:var(--muted)}
-    .btn-wide{min-width:220px}
-
-    /* oferta */
-    .offer{margin:20px auto;max-width:900px;padding:0 6px}
-    .offer-box{background:var(--card);padding:24px;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,0.8);display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;animation:fadeInUp 1.2s ease}
-    .offer-left{flex:1;min-width:320px}
-    .offer h2{color:var(--pink2);margin:0 0 10px;font-size:22px}
-    .offer p.lead{color:#ccc;margin:6px 0 14px;font-size:15px}
-
-    /* planos */
-    .plan{background:#020202;padding:18px;border-radius:12px;margin-bottom:14px;color:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.7);transition:.3s}
-    .plan:hover{transform:scale(1.02)}
-    .plan .title{font-weight:900;color:var(--pink2);font-size:16px;margin-bottom:6px}
-    .plan .price{font-weight:900;font-size:20px;color:var(--white);margin:6px 0}
-    .plan .desc{color:#bdbfc3;font-size:13px;line-height:1.4;margin-bottom:12px}
-    .pay-blue{background:linear-gradient(90deg,var(--blue1),var(--blue2));color:#fff;padding:12px 14px;border-radius:10px;font-weight:900;display:inline-block;text-align:center;min-width:200px;transition:.3s}
-    .pay-blue:hover{box-shadow:0 0 20px var(--blue2);transform:scale(1.05)}
-
-    /* features */
-    .features{display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap}
-    .feature{background:#0c0c0c;padding:14px;border-radius:10px;min-width:180px;flex:1;color:var(--muted);transition:.3s}
-    .feature:hover{transform:scale(1.05);box-shadow:0 0 15px rgba(255,0,128,0.3)}
-
-    /* feedback */
-    .feedback{max-width:900px;margin:28px auto;text-align:left}
-    .testi{background:#0b0b0b;padding:14px;border-radius:10px;margin-bottom:12px;color:#eee;animation:fadeIn 1s ease}
-    .testi strong{color:#0f0}
-
-    footer{margin-top:36px;color:#8f8f8f;font-size:13px}
-
-    /* contador */
-    .countdown{margin:18px auto;font-size:18px;font-weight:800;color:var(--pink2)}
-    .scarcity{margin-top:10px;color:#ff5aa6;font-size:15px;font-weight:700}
-    
-    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maria Eduarda VIP</title>
+  <meta name="description" content="Entre no meu mundo VIP: conteúdos exclusivos, acesso imediato e desejo sem censura.">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <main class="container">
+    <!-- Hero -->
+    <header class="hero">
+      <h1>Maria Eduarda</h1>
+      <p class="tagline">Entre no meu mundo exclusivo agora mesmo 💜</p>
+    </header>
 
-  <div class="topbar">🔥 17 pessoas compraram nas últimas horas! Últimas vagas abertas!</div>
+    <!-- Bloco central -->
+    <section class="card">
+      <!-- Botão VIP -->
+      <a href="https://t.me/dudinhaavipsbot" target="_blank" class="btn btn-vip" aria-label="Entrar no Telegram VIP">
+        <span class="icon">📩</span>
+        Telegram VIP
+      </a>
 
-  <header>
-    <div class="profile-wrap">
-      <img src="perfil.jpg" alt="Foto de perfil" class="profile-pic">
-    </div>
-  </header>
+      <!-- Botão Website -->
+      <a href="https://dudasecrets.github.io/Maria-Eduarda-VIP/" target="_blank" class="btn btn-site" aria-label="Visitar Website Oficial">
+        <span class="icon">💜</span>
+        Website Oficial
+      </a>
 
-  <main>
-    <h1>Maria Eduarda VIP</h1>
-    <p class="subtitle">✨ Conteúdo proibido, mensagens privadas e atenção TOTAL só para quem é VIP ✨</p>
-
-    <div class="stats">
-      <div class="stat"><div class="num">107</div><div class="label">Posts</div></div>
-      <div class="stat"><div class="num">128</div><div class="label">Mídia</div></div>
-      <div class="stat"><div class="num">723</div><div class="label">Seguidores</div></div>
-      <div class="stat"><div class="num">401</div><div class="label">Curtidas</div></div>
-    </div>
-
-    <div class="buttons">
-      <a class="btn btn-pink btn-wide" href="https://wa.me/5511962833961" target="_blank" rel="noopener">🎁 Quero dar um presente</a>
-      <a class="btn btn-ghost" href="https://wa.me/5511962833961?text=Oi%2C%20preciso%20de%20ajuda" target="_blank" rel="noopener">💬 Suporte VIP</a>
-    </div>
-
-    <!-- Planos -->
-    <div class="offer">
-      <div class="offer-box">
-        <div class="offer-left">
-          <h2>💖 Escolha seu plano e entre AGORA no VIP</h2>
-          <p class="lead">Assine agora e receba acesso imediato a conteúdos secretos 🔥, vídeos proibidos 🔞 e conversas privadas comigo 💌.</p>
-
-          <div class="plan">
-            <div class="title">Mensal</div>
-            <div class="price">R$16,90</div>
-            <div class="desc">Acesso VIP por 30 dias 📅<br>Receba conteúdos novos toda semana + fale comigo direto pelo WhatsApp 😈</div>
-            <a class="pay-blue" href="pix-month.html">👉 Quero o Mensal</a>
-          </div>
-
-          <div class="plan">
-            <div class="title">Trimestral</div>
-            <div class="price">R$33,01</div>
-            <div class="desc">3 meses de acesso completo 🔥<br>Mais barato que o mensal, perfeito pra quem não quer ficar de fora 😏</div>
-            <a class="pay-blue" href="pix-trimester.html">👉 Quero o Trimestral</a>
-          </div>
-
-          <div class="plan">
-            <div class="title">Vitalício</div>
-            <div class="price">R$69,90</div>
-            <div class="desc">Acesso eterno ♾️<br>Nunca mais paga nada e ainda ganha prioridade máxima nas respostas 💎</div>
-            <a class="pay-blue" href="pix-lifetime.html">🔥 Quero o Vitalício</a>
-          </div>
-
-          <!-- contador e escassez -->
-          <div class="countdown" id="countdown"></div>
-          <div class="scarcity">🚨 Apenas <span id="spots">8</span> vagas VIP restantes hoje!</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="features">
-      <div class="feature">📸 Conteúdo proibido toda semana</div>
-      <div class="feature">🎥 Vídeos só para assinantes</div>
-      <div class="feature">💌 Atenção direta e prioridade</div>
-    </div>
-
-    <section class="feedback">
-      <h3 style="color:var(--pink2);margin-bottom:12px">💬 O que assinantes dizem</h3>
-      <div class="testi"><strong>✔✔ João - Ontem 22:10</strong><div>"Maria, tu é surreal, vale cada centavo 🔥"</div></div>
-      <div class="testi"><strong>✔✔ Lucas - Hoje 09:15</strong><div>"Melhor site que já assinei, respondes rápido demais 😍"</div></div>
-      <div class="testi"><strong>✔✔ Pedro - Hoje 14:30</strong><div>"Fiquei viciado no teu VIP, não largo mais 💖"</div></div>
-      <div class="testi"><strong>✔✔ André - Hoje 20:00</strong><div>"Tô arrepiado com os vídeos novos 😈🔥"</div></div>
+      <!-- Botão Grátis -->
+      <a href="https://t.me/dudamariax" target="_blank" class="btn btn-free" aria-label="Entrar no Telegram Grátis">
+        <span class="icon">📩</span>
+        Telegram GRÁTIS
+      </a>
     </section>
+
+    <!-- Frases de impacto -->
+    <section class="extra-copy">
+      <p>🔥 Conteúdos exclusivos e sem censura</p>
+      <p>⚡ Acesso imediato, sem enrolação</p>
+      <p>💦 Escolha agora: VIP ou grátis?</p>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+      <p>Maria Eduarda ©️ 2025 — Apenas +18</p>
+    </footer>
   </main>
-
-  <footer>
-    ©️ 2025 Maria Eduarda — Todos os direitos reservados
-  </footer>
-
-  <script>
-    // Contador regressivo
-    function startCountdown(hours) {
-      let endTime = new Date().getTime() + hours*60*60*1000;
-      function update() {
-        let now = new Date().getTime();
-        let dist = endTime - now;
-        if (dist <= 0) {
-          document.getElementById("countdown").innerText = "⏳ Oferta expirada!";
-          return;
-        }
-        let h = Math.floor(dist/(1000*60*60));
-        let m = Math.floor((dist%(1000*60*60))/(1000*60));
-        let s = Math.floor((dist%(1000*60))/1000);
-        document.getElementById("countdown").innerText =
-          "⏰ Promoção acaba em: " + h + "h " + m + "m " + s + "s";
-      }
-      setInterval(update,1000); update();
-    }
-    startCountdown(5);
-
-    // Vagas aleatórias
-    let spots = 8;
-    setInterval(()=>{
-      if(spots>3 && Math.random()<0.3){
-        spots--;
-        document.getElementById("spots").innerText = spots;
-      }
-    },7000);
-  </script>
 </body>
 </html>
