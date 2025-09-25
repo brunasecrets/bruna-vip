@@ -1,0 +1,76 @@
+:root {
+  --black: #000;
+  --card: #111;
+  --pink1: #ff0080;
+  --pink2: #ff5aa6;
+  --blue1: #0077ff;
+  --blue2: #33a1ff;
+  --accent: #ff3366;
+  --white: #fff;
+}
+
+/* Base */
+body {margin:0;font-family:'Poppins',sans-serif;background:var(--black);color:var(--white)}
+a{text-decoration:none;color:inherit}
+h1,h2{margin:0}
+
+/* Topbar */
+.topbar{background:linear-gradient(90deg,var(--pink1),var(--pink2));color:#111;padding:8px;font-weight:700;font-size:14px;text-align:center}
+
+/* Hero */
+.hero{text-align:center;padding:40px 20px}
+.hero h1{font-size:34px;font-weight:800}
+.subtitle{color:#bbb;margin-top:10px;font-size:16px}
+
+/* Stats */
+.stats{display:flex;gap:18px;justify-content:center;margin:20px 0;flex-wrap:wrap}
+.stat .num{color:var(--blue1);font-weight:900;font-size:20px}
+.stat .label{font-size:14px;opacity:.8}
+
+/* Buttons */
+.buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:20px 0}
+.btn{padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:.3s;text-align:center;justify-content:center}
+.btn-pink{background:linear-gradient(90deg,var(--pink1),var(--pink2));color:#111;box-shadow:0 12px 36px rgba(255,0,128,.3)}
+.btn-blue{background:linear-gradient(90deg,var(--blue1),var(--blue2));color:#fff;box-shadow:0 12px 36px rgba(0,119,255,.3)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.2);color:#bbb}
+.btn-wide{min-width:220px}
+
+/* Preview */
+.preview{text-align:center;padding:40px 20px}
+.preview h2{margin-bottom:20px}
+.preview .grid{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.preview img{width:30%;min-width:150px;border-radius:12px;object-fit:cover}
+
+/* Benefits */
+.benefits{text-align:center;padding:40px 20px}
+.benefits h2{margin-bottom:20px}
+.benefits ul{list-style:none;padding:0}
+.benefits li{margin:10px 0}
+
+/* Depoimentos */
+.depoimentos{text-align:center;padding:40px 20px;background:rgba(255,255,255,0.05);border-radius:12px;margin:20px}
+#depoimentos-box{font-size:15px;font-style:italic;}
+
+/* Oferta */
+.offer{text-align:center;padding:40px 20px}
+.offer-box{background:var(--card);padding:24px;border-radius:14px;display:inline-block}
+.plan .title{font-weight:900;color:var(--pink2);margin-bottom:10px}
+.plan .price{font-weight:900;font-size:22px;color:var(--white);margin-bottom:10px}
+.pay-blue{background:linear-gradient(90deg,var(--blue1),var(--blue2));color:#fff;padding:12px 14px;border-radius:10px;font-weight:900;display:inline-block;min-width:200px}
+
+/* Footer */
+.footer{text-align:center;padding:20px;font-size:14px;opacity:.7}
+
+/* Pagamento */
+.container{max-width:900px;margin:auto;padding:20px}
+.card{background:#111;padding:20px;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.6)}
+.pay-header{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{width:58px;height:58px;border-radius:12px;background:linear-gradient(135deg,#ff007a,#ff6fb3);display:flex;align-items:center;justify-content:center;font-weight:800;color:#111}
+.lead{color:#aaa;font-size:14px;margin-top:5px}
+.alert{background:#1a1a1a;border:1px solid #333;padding:10px;border-radius:8px;margin-top:12px;color:#ffb3d9;font-size:14px;text-align:center}
+.panel{background:#0b0b0b;padding:14px;border-radius:12px;margin-top:12px}
+.label{color:#9aa0a6;font-size:13px;margin-bottom:6px}
+.pix-text{background:#000;padding:10px;border-radius:8px;font-weight:700;font-size:14px;word-break:break-all}
+.controls{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.btn.ghost{background:transparent;border:1px solid #333;color:#aaa}
+.success{background:linear-gradient(90deg,#0ee9a7,#0ecf7a);color:#012;padding:10px;border-radius:10px;font-weight:800;margin-top:10px;display:none;text-align:center}
