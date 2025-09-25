@@ -1,53 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maria Eduarda VIP</title>
-  <meta name="description" content="Entre no meu mundo VIP: conteúdos exclusivos, acesso imediato e desejo sem censura.">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maria Eduarda • VIP</title>
+  <meta name="description" content="Maria Eduarda — Conteúdo exclusivo, acesso imediato e sigilo.">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="container">
-    <!-- Hero -->
-    <header class="hero">
-      <h1>Maria Eduarda</h1>
-      <p class="tagline">Entre no meu mundo exclusivo agora mesmo 💜</p>
-    </header>
+  <!-- Cover / header -->
+  <header class="cover" role="banner" aria-label="Capa da página">
+    <div class="cover-overlay"></div>
+    <div class="cover-inner">
+      <div class="avatar-wrap">
+        <img src="img/avatar.jpg" alt="Maria Eduarda" class="avatar">
+      </div>
+      <h1 class="name">Maria Eduarda</h1>
+      <p class="bio">Conteúdos exclusivos e sem censura. Vídeos novos toda semana. +18</p>
 
-    <!-- Bloco central -->
-    <section class="card">
-      <!-- Botão VIP -->
-      <a href="https://t.me/dudinhaavipsbot" target="_blank" class="btn btn-vip" aria-label="Entrar no Telegram VIP">
-        <span class="icon">📩</span>
-        Telegram VIP
+      <div class="meta">
+        <div><strong>+200</strong><span>posts</span></div>
+        <div><strong>12k</strong><span>seguidores</span></div>
+        <div><strong>TOP</strong><span>VIP</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+    <!-- CTA principal -->
+    <section class="cta">
+      <a class="btn btn-subscribe" href="https://t.me/dudinhaavipsbot" target="_blank" aria-label="Assinar VIP">
+        🔥 ASSINAR VIP — R$19,90 / mês
       </a>
-
-      <!-- Botão Website -->
-      <a href="https://dudasecrets.github.io/Maria-Eduarda-VIP/" target="_blank" class="btn btn-site" aria-label="Visitar Website Oficial">
-        <span class="icon">💜</span>
-        Website Oficial
-      </a>
-
-      <!-- Botão Grátis -->
-      <a href="https://t.me/dudamariax" target="_blank" class="btn btn-free" aria-label="Entrar no Telegram Grátis">
-        <span class="icon">📩</span>
-        Telegram GRÁTIS
+      <a class="btn btn-free" href="https://t.me/dudamariax" target="_blank" aria-label="Entrar no Telegram Grátis">
+        👀 Entrar no GRÁTIS
       </a>
     </section>
 
-    <!-- Frases de impacto -->
-    <section class="extra-copy">
-      <p>🔥 Conteúdos exclusivos e sem censura</p>
-      <p>⚡ Acesso imediato, sem enrolação</p>
-      <p>💦 Escolha agora: VIP ou grátis?</p>
+    <!-- Provas / prévias -->
+    <section class="previews" aria-label="Prévias do VIP">
+      <h2>Prévia (só um aperitivo)</h2>
+      <div class="preview-grid">
+        <div class="preview-card">
+          <img src="img/preview1.jpg" alt="Prévia 1">
+          <div class="overlay">Vídeo preview • 00:18</div>
+        </div>
+        <div class="preview-card">
+          <img src="img/preview2.jpg" alt="Prévia 2">
+          <div class="overlay">Vídeo preview • 00:12</div>
+        </div>
+      </div>
     </section>
 
-    <!-- Rodapé -->
-    <footer>
-      <p>Maria Eduarda ©️ 2025 — Apenas +18</p>
-    </footer>
+    <!-- Benefícios -->
+    <section class="benefits" aria-label="Benefícios do VIP">
+      <h3>O que você recebe</h3>
+      <ul>
+        <li>✅ Acesso imediato ao meu conteúdo sem censura</li>
+        <li>✅ Mensagens diretas e pedidos personalizados</li>
+        <li>✅ Novos vídeos toda semana</li>
+        <li>✅ Sigilo absoluto — só quem tá no VIP vê</li>
+      </ul>
+    </section>
+
+    <!-- Grid de posts (mock) -->
+    <section class="posts" aria-label="Posts">
+      <h3>Últimos lançamentos</h3>
+      <div class="posts-grid">
+        <article class="post locked">
+          <div class="thumb" style="background-image:url('img/preview1.jpg');"></div>
+          <div class="post-meta">
+            <span>Clip rápido</span>
+            <strong>00:18</strong>
+          </div>
+        </article>
+
+        <article class="post locked">
+          <div class="thumb" style="background-image:url('img/preview2.jpg');"></div>
+          <div class="post-meta">
+            <span>Teaser</span>
+            <strong>00:12</strong>
+          </div>
+        </article>
+
+        <article class="post locked">
+          <div class="thumb" style="background-image:url('img/preview3.jpg');"></div>
+          <div class="post-meta">
+            <span>Clip exclusivo</span>
+            <strong>01:05</strong>
+          </div>
+        </article>
+
+        <article class="post locked">
+          <div class="thumb" style="background-image:url('img/preview4.jpg');"></div>
+          <div class="post-meta">
+            <span>Pack fotos</span>
+            <strong>12 fotos</strong>
+          </div>
+        </article>
+      </div>
+      <p class="note">…e muito mais dentro do VIP.</p>
+    </section>
+
   </main>
+
+  <!-- Footer + botao fixo mobile -->
+  <footer class="site-footer">
+    <p>Maria Eduarda ©️ 2025 — Apenas maiores de 18 anos</p>
+  </footer>
+
+  <!-- Botão fixo para assinar (mobile) -->
+  <a class="subscribe-fixed" href="https://t.me/dudinhaavipsbot" target="_blank" aria-label="Assinar VIP agora">
+    🔥 ASSINAR VIP
+  </a>
+
+  <script>
+    // Pequeno script para detectar mobile e esconder botão fixo em desktop (já está por CSS, mas deixo extra)
+    (function(){
+      const btn = document.querySelector('.subscribe-fixed');
+      function update() {
+        if(window.innerWidth > 900) btn.style.display = 'none';
+        else btn.style.display = 'flex';
+      }
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
 </body>
 </html>
