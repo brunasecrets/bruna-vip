@@ -1,84 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Maria Eduarda</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Topbar -->
-  <div class="topbar">🔥 12 pessoas compraram nas últimas horas!</div>
+  <div class="topbar">🔥 17 pessoas compraram nas últimas horas — Últimas vagas!</div>
 
-  <!-- Header -->
   <header class="hero">
-    <img src="img/perfil.jpg" alt="Maria Eduarda" class="profile-pic">
-    <h1>Maria Eduarda</h1>
-    <p class="subtitle">✨ Conteúdo privado, mensagens diretas e conteúdo diário — só pra assinantes ✨</p>
+    <div class="hero-inner">
+      <img src="perfil.jpg" alt="Foto de Maria Eduarda" class="profile-pic" id="profilePic">
+      <h1 class="site-title">Maria Eduarda</h1>
+      <p class="subtitle">✨ Conteúdo privado, mensagens diretas e novidades semanais — só pra assinantes</p>
+    </div>
   </header>
 
-  <!-- Estatísticas -->
-  <section class="stats">
-    <div class="stat"><div class="num">107</div><div class="label">Posts</div></div>
-    <div class="stat"><div class="num">723</div><div class="label">Seguidores</div></div>
-    <div class="stat"><div class="num">401</div><div class="label">Curtidas</div></div>
-    <div class="stat"><div class="num">128</div><div class="label">Mídia</div></div>
+  <!-- STATS -->
+  <section class="stats" aria-label="Estatísticas">
+    <div class="stat">
+      <div class="num">107</div>
+      <div class="label">Posts</div>
+    </div>
+    <div class="stat">
+      <div class="num">723</div>
+      <div class="label">Seguidores</div>
+    </div>
+    <div class="stat">
+      <div class="num">401</div>
+      <div class="label">Curtidas</div>
+    </div>
+    <div class="stat">
+      <div class="num">128</div>
+      <div class="label">Mídia</div>
+    </div>
   </section>
 
-  <!-- Botões principais -->
+  <!-- CTAS -->
   <section class="buttons">
-    <a class="btn btn-pink btn-wide" href="pagamento.html">🔥 Assinar VIP — R$16,90</a>
-    <a class="btn btn-blue btn-wide" href="https://t.me/dudamariax" target="_blank">💬 Entrar no grupo grátis</a>
-    <a class="btn btn-ghost" href="https://wa.me/5511962833961?text=Oi%2C%20preciso%20de%20ajuda" target="_blank">⚡ Suporte</a>
+    <a class="btn btn-primary" href="pagamento-mensal.html">🔥 Assinar Mensal — R$16,90</a>
+    <a class="btn btn-ghost" href="https://t.me/dudamariax" target="_blank" rel="noopener">👀 Entrar no Grupo GRÁTIS</a>
+    <a class="btn btn-support" href="https://wa.me/5511962833961?text=Oi%2C%20preciso%20de%20ajuda" target="_blank" rel="noopener">💬 Suporte</a>
   </section>
 
-  <!-- Prévia -->
-  <section class="preview">
-    <h2>👀 Prévia exclusiva</h2>
-    <div class="grid">
-      <img src="img/preview1.jpg" alt="Prévia 1">
-      <img src="img/preview2.jpg" alt="Prévia 2">
-      <img src="img/preview3.jpg" alt="Prévia 3">
-    </div>
-  </section>
-
-  <!-- Benefícios -->
-  <section class="benefits">
-    <h2>O que você recebe no VIP</h2>
-    <div class="benefits-grid">
-      <div class="benefit">✅ Conteúdo exclusivo +18</div>
-      <div class="benefit">✅ Novos vídeos toda semana</div>
-      <div class="benefit">✅ Conversa direta comigo</div>
-      <div class="benefit">✅ Sigilo garantido</div>
-    </div>
-  </section>
-
-  <!-- Depoimentos -->
-  <section class="depoimentos">
-    <h2>O que estão falando 🔥</h2>
-    <div id="depoimentos-box"></div>
-  </section>
-
-  <!-- Oferta -->
-  <section class="offer">
-    <div class="offer-box">
-      <div class="plan">
-        <div class="title">1 mês VIP</div>
-        <div class="price">R$16,90</div>
-        <a class="pay-blue" href="pagamento.html">💎 Pagar agora</a>
+  <!-- PRÉVIAS -->
+  <section class="preview section-card">
+    <h2 class="section-title">👀 Prévia (apenas um aperitivo)</h2>
+    <div class="preview-grid">
+      <div class="preview-card reveal">
+        <img src="preview1.jpg" alt="Prévia 1">
+        <div class="preview-meta">Vídeo • 10:23</div>
+      </div>
+      <div class="preview-card reveal">
+        <img src="preview2.jpg" alt="Prévia 2">
+        <div class="preview-meta">Vídeo • 7:11</div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>Maria Eduarda © 2025 • Todos os direitos reservados</p>
+  <!-- BENEFÍCIOS (4 quadradinhos animados) -->
+  <section class="benefits section-card">
+    <h2 class="section-title">O que você recebe no VIP</h2>
+    <div class="benefits-grid">
+      <div class="benefit reveal">
+        <div class="benefit-emoji">✅</div>
+        <div class="benefit-text">Conteúdo exclusivo +18</div>
+      </div>
+      <div class="benefit reveal">
+        <div class="benefit-emoji">✅</div>
+        <div class="benefit-text">Novos vídeos toda semana</div>
+      </div>
+      <div class="benefit reveal">
+        <div class="benefit-emoji">✅</div>
+        <div class="benefit-text">Conversa direta comigo</div>
+      </div>
+      <div class="benefit reveal">
+        <div class="benefit-emoji">✅</div>
+        <div class="benefit-text">Sigilo garantido</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS (estilo WhatsApp) -->
+  <section class="depoimentos section-card">
+    <h2 class="section-title">💬 O que os assinantes dizem</h2>
+    <div class="testimonials">
+      <div class="testi reveal"><strong>✔✔ João</strong><p>"Maria, valeu cada centavo — conteúdo insano 🔥"</p></div>
+      <div class="testi reveal"><strong>✔✔ Lucas</strong><p>"Responde de verdade, atendimento top 😍"</p></div>
+      <div class="testi reveal"><strong>✔✔ Pedro</strong><p>"Melhor conteúdo que já vi — viciado 💖"</p></div>
+      <div class="testi reveal"><strong>✔✔ André</strong><p>"Os vídeos são top, recomendo!"</p></div>
+    </div>
+  </section>
+
+  <!-- ÚNICO PLANO (box final) -->
+  <section class="final-offer section-card reveal">
+    <div class="final-box">
+      <div class="final-left">
+        <h3>Entrar no VIP — Acesso Imediato</h3>
+        <p class="muted">Ao pagar, envie o comprovante no WhatsApp e eu libero seu acesso.</p>
+      </div>
+      <div class="final-right">
+        <div class="final-price">R$16,90</div>
+        <a class="btn btn-pay" href="pagamento-mensal.html">👉 Assinar Mensal</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>Maria Eduarda © 2025 — Todos os direitos reservados</p>
   </footer>
 
-  <!-- Botão fixo -->
-  <a class="subscribe-fixed" href="pagamento.html">🔥 Assinar VIP agora</a>
+  <!-- BOTÃO FIXO (segue o usuário) -->
+  <a class="subscribe-fixed" href="pagamento-mensal.html">🔥 Assinar VIP — R$16,90</a>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
